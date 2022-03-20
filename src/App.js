@@ -8,6 +8,7 @@ import Progress from "./pages/progress.js";
 import quiz from "./pages/quiz";
 import { signout } from "./pages/signout";
 import { blog } from "./pages/blog";
+import DarkMode from "./components/DarkMode/DarkMode";
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
           <Route path="/signin" component={signout} />
           <div>
           <Navbar />
+            <DarkMode></DarkMode>
             <Route exact path="/" component={test} />
             <Route path="/progress" component={Progress} />
             <Route path="/quiz" component={quiz} />
