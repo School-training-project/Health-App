@@ -10,14 +10,13 @@ import { signout } from "./pages/signout";
 import { blog } from "./pages/blog";
 
 function App() {
-  const [theme, setTheme] = useState("light")
   return (
     <Router>
       <Switch>
         
-         <Route path="/signin" component={signout} />
-         <div>
-         <Navbar />
+          <Route path="/signin" component={signout} />
+          <div>
+          <Navbar />
             <Route exact path="/" component={test} />
             <Route path="/progress" component={Progress} />
             <Route path="/quiz" component={quiz} />
