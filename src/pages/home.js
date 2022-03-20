@@ -2,7 +2,6 @@
 import React from 'react';
 
 const test = () => {
-  
   return ( <div
                 style={{
                   display: 'flex',
@@ -11,7 +10,6 @@ const test = () => {
                   height: '100vh'
               }}>   
       <h1>Welcome to our website!</h1>
-      
       </div>
   );
 };

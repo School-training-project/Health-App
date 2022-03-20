@@ -2,6 +2,7 @@ import React from 'react'
 
 function map() {
     return (
+        
         <div
             style={{
                 display: 'flex',
