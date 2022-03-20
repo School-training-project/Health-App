@@ -15,8 +15,8 @@ export const NavLogo = styled(Link)`
     cursor: pointer;
     background-image: linear-gradient(
         to right,
-        #1E3163,
-        #F037A5 50%,
+        #F037A5,
+        #1E3163 50%,
         white 50%
     );
     background-size: 200% 100%;
@@ -48,8 +48,8 @@ export const NavLogo = styled(Link)`
 export const NavLink = styled(Link)`
     background-image: linear-gradient(
         to right,
-        #1E3163,
-        #F037A5 50%,
+        #F037A5,
+        #1E3163 50%,
         white 50%
     );
     background-size: 200% 100%;
@@ -128,8 +128,8 @@ export const NavBtnLink = styled(Link)`
     margin-left: 24px;
     background-image: linear-gradient(
         to right,
-        #1E3163,
-        #F037A5 50%,
+        #F037A5,
+        #1E3163 50%,
         white 50%
     );
     background-size: 200% 100%;

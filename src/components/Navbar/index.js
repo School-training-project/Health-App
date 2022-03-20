@@ -20,36 +20,31 @@ const Navbar = () => {
                 <NavMenu>
                     <NavLink
                         to="/"
-                        activeStyle={{ color: 'black' }}
                     >
                         Home
                     </NavLink>
                     <NavLink
-                        to="/progress"
-                        activeStyle={{ color: 'black' }}
+                        strict to="/progress"
                     >
                         Progress
                     </NavLink>
                     <NavLink
-                        to="/contact"
-                        activeStyle={{ color: 'black' }}
+                        to="/quiz"
                     >
                         Quiz
                     </NavLink>
                     <NavLink
-                        to="/signin"
-                        activeStyle={{ color: 'black' }}
+                        to="/blog"
                     >
                         Blog
                     </NavLink>
                     <NavLink
                         to="/map"
-                        activeStyle={{ color: 'black' }}
                     >
                         Map
                     </NavLink>
                     <NavBtn>
-                        <NavBtnLink to="/">Sign out</NavBtnLink>
+                        <NavBtnLink to="/signIn">Sign out</NavBtnLink>
                     </NavBtn>
                 </NavMenu>
             </Nav>

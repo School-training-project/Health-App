@@ -1,6 +1,6 @@
 import React from 'react'
 
-function Contact() {
+function map() {
     return (
         <div
             style={{
@@ -10,9 +10,9 @@ function Contact() {
                 height: '100vh'
             }}
         >
-           <h1>Contact Us</h1> 
+           <h1>Map</h1> 
         </div>
     );
 };
 
-export default Contact;
+export default map;
