@@ -1,3 +1,4 @@
+
 input, textarea {
     padding: 7px;
     border:0px ;
@@ -93,11 +94,35 @@ text-align: center;
     justify-content: center;
         align-items: center;
         height: 100vh;
-        background-color: #e5f7fc;
+        
 }
 .title{
     margin-top: 10%;
             text-align: center;
-            color: #2e5951;
-            text-shadow: 1px 1px 5px #aeb5b4
+            color: #282c34;
+            text-shadow: 1px 1px 5px #7b9993
+}
+:root {
+    --dark : #282c34;
+    --white: white;
+}
+
+body.light{
+    --background-color: var(--white);
+    --text-color: var(--dark);
+    --font-weight:400;
+}
+
+
+body.light{
+    --background-color: var(--dark);
+    --text-color: var(--white);
+    --font-weight:400;
+}
+
+.body{
+    background: var(--background-color);
+    color: var(--text-color);
+    font-weight: var(--font-weight);
+    transition: background .3s ease-in-out, color .6s ease-in-out;
 }
