@@ -6,7 +6,7 @@ import test from "./pages/index.js";
 import map from "./pages/map";
 import Progress from "./pages/progress.js";
 import quiz from "./pages/quiz";
-import { signout } from "./pages/signout";
+import { Signout } from "./pages/Signout";
 import { blog } from "./pages/blog";
 import DarkMode from "./components/DarkMode/DarkMode";
 
