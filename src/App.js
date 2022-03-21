@@ -14,7 +14,7 @@ function App() {
   return (
     <Router>
       <Switch>
-          <Route path="/signin" component={signout} />
+          <Route path="/signin" component={Signout} />
           <div>
             <Navbar />
               <Route exact path="/" component={test} />

@@ -1,0 +1,103 @@
+input, textarea {
+    padding: 7px;
+    border:0px ;
+    border-radius:4px;
+    margin-left: 25%;
+    margin-top: 5%;
+    width:50%
+    
+   
+    
+}
+.form-group {
+    margin-top:18%;
+}
+
+::placeholder {
+color:  #989ca0;
+font-family:calibri;
+font-size:140%;
+text-align: center;
+}
+.signbutton{
+ background-color: #ccefe8 ;
+ border-radius:4px;
+ border:0px;
+ color: #2e5951;
+ font-family:calibri;
+ font-size:130%;
+ font-weight: bold;
+ margin-top:6%;
+ margin-left: 40%;
+ 
+ transition-duration: 0.4s;
+}
+
+.signbutton:hover {
+  background-color: #2e5951;
+  color: #ccefe8;
+}
+
+
+.signin-button{
+    color: #ccefe8;
+    background-color: #6bcbb8 ;
+    border-top: 0px;
+    border-left: 0px;
+    border-right: 0px solid #ccefe8;
+    border-bottom: 1px solid #ccefe8;
+    width: 40%;
+    margin-left:10%;
+    font-size:130%; 
+    transition-duration: 0.4s;  
+    opacity:0.8
+
+}
+.signin-button:hover {
+    opacity: 1;
+    transform: translateY(-2px);
+    
+  }
+.signup-button{
+    color: #ccefe8;
+    background-color: #6bcbb8 ;
+    border-top: 0px;
+    border-right: 0px;
+    border-left: 1px solid #ccefe8;
+    border-bottom: 1px solid #ccefe8;
+    width: 40%;
+    margin-top: 10%;
+    font-size:130%;
+    transition-duration: 0.4s;  
+    opacity:0.8
+
+}
+.signup-button:hover {
+    opacity: 1;
+    transform: translateY(-2px);
+}
+.Left{
+    box-shadow: 10px 15px 30px rgba(0, 0, 0, 0.1);
+    width: 30%;
+    height: 70%;
+    background-color: white
+}
+.Right{
+    box-shadow: 10px 15px 30px rgba(0, 0, 0, 0.1);
+    width: 30%;
+    height: 70%;
+    background-color: #6bcbb8
+}
+.centre{
+    display: flex;
+    justify-content: center;
+        align-items: center;
+        height: 100vh;
+        background-color: #e5f7fc;
+}
+.title{
+    margin-top: 10%;
+            text-align: center;
+            color: #2e5951;
+            text-shadow: 1px 1px 5px #aeb5b4
+}
