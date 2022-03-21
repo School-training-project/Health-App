@@ -14,18 +14,17 @@ function App() {
   return (
     <Router>
       <Switch>
-        
           <Route path="/signin" component={signout} />
           <div>
-          <Navbar />
-            <DarkMode></DarkMode>
-            <Route exact path="/" component={test} />
-            <Route path="/progress" component={Progress} />
-            <Route path="/quiz" component={quiz} />
-            <Route path="/blog" component={blog} />
-            <Route path="/map" exact component={map} />
-        </div>
+            <Navbar />
+              <Route exact path="/" component={test} />
+              <Route path="/progress" component={Progress} />
+              <Route path="/quiz" component={quiz} />
+              <Route path="/blog" component={blog} />
+              <Route path="/map" exact component={map} />
+          </div>
       </Switch>
+      <DarkMode/>
     </Router>
     
     
