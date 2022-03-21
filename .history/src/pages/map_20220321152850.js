@@ -24,7 +24,7 @@ function Map() {
       <GoogleMap
         center={center}
         zoom={15}
-        mapContainerStyle={{ width: "70%", height: "100%" }}
+        mapContainerStyle={{ width: "90%", height: "90%" }}
         options={{
             zoomControl: true,
             streetViewControl: true,

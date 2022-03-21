@@ -19,12 +19,17 @@ function Map() {
         alignItems: "center",
         height: "100vh",
       }}
-    > 
-      
+    > <div>
+        <h1>MAP</h1>
+    </div>
+      <div
+        style={{
+            margin: "top 50px"
+        }}>
       <GoogleMap
         center={center}
         zoom={15}
-        mapContainerStyle={{ width: "70%", height: "100%" }}
+        mapContainerStyle={{ width: "90%", height: "90%" }}
         options={{
             zoomControl: true,
             streetViewControl: true,
@@ -32,7 +37,7 @@ function Map() {
       >
         
       </GoogleMap>
-      
+      </div>
       
     </div>
   );
