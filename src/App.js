@@ -17,6 +17,7 @@ function App() {
           <Route path="/signin" component={Signout} />
           <div>
             <Navbar />
+            <DarkMode/>
               <Route exact path="/" component={test} />
               <Route path="/progress" component={Progress} />
               <Route path="/quiz" component={quiz} />
@@ -24,7 +25,7 @@ function App() {
               <Route path="/map" exact component={map} />
           </div>
       </Switch>
-      <DarkMode/>
+      
     </Router>
     
     
