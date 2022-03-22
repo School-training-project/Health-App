@@ -10,7 +10,7 @@ import {
 } from "./NavbarElements";
 
 const Navbar = () => {
-    
+
     return (
         <>
             <Nav>
@@ -21,8 +21,8 @@ const Navbar = () => {
                 <Bars />
                 <NavMenu>
                     <NavLink
-                        to="/"
-                    id="H">
+                        to="/home"
+                    >
                         Home
                     </NavLink>
                     <NavLink

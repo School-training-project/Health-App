@@ -6,7 +6,8 @@ import test from "./pages/index.js";
 import map from "./pages/map";
 import Progress from "./pages/progress.js";
 import quiz from "./pages/quiz";
-import { signout } from "./pages/signout";
+import home from "./pages/home";
+import { Signout } from "./pages/Signout";
 import { blog } from "./pages/blog";
 import DarkMode from "./components/DarkMode/DarkMode";
 
@@ -14,18 +15,19 @@ function App() {
   return (
     <Router>
       <Switch>
-        
-          <Route path="/signin" component={signout} />
+          <Route path="/signin" component={Signout} />
           <div>
-          <Navbar />
-            <DarkMode></DarkMode>
-            <Route exact path="/" component={test} />
-            <Route path="/progress" component={Progress} />
-            <Route path="/quiz" component={quiz} />
-            <Route path="/blog" component={blog} />
-            <Route path="/map" exact component={map} />
-        </div>
+            <Navbar />
+            <DarkMode/>
+              <Route exact path="/" component={test} />
+              <Route path="/home" component={home} />
+              <Route path="/progress" component={Progress} />
+              <Route path="/quiz" component={quiz} />
+              <Route path="/blog" component={blog} />
+              <Route path="/map" exact component={map} />
+          </div>
       </Switch>
+      
     </Router>
     
     
