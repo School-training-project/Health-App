@@ -1,6 +1,7 @@
 import { FaBars } from "react-icons/fa";
 import { NavLink as Link } from "react-router-dom";
 import styled from "styled-components";
+import { useState } from "react";
 
 export const Nav = styled.nav`
     background: rgb(63,215,180);
@@ -11,16 +12,47 @@ export const Nav = styled.nav`
     padding: 0.2rem calc((100vw - 1000px) / 2);
     z-index: 12;
     `;
-export const NavLogo = styled(Link)`
+let gradDir="left"
+let origin="0%"
+let dest="-100%"
+/**const [gradDir,setDir] = useState("right")
+const [origin,setOrigin] = useState("-100%")
+const [dest,setDest] = useState("0%")
+
+function flip(){
+//console.log("flipping")
+let g= gradDir==="right" ? "left":"right"
+let o= origin==="0%" ? "-100%":"0%"
+let d= dest==="0%" ? "-100%":"0%"
+setDir(g);setOrigin(o);setDest(d);
+}
+
+let cvelocity="right"
+let Tab= new Array()
+
+function addtab(e){
+    Tab.unshift(e.clientX);
+    if (Tab.length>2){Tab.pop()}
+}
+onmousemove = function(e){
+    let nvelocity="right"
+    addtab(e)
+    //console.log(Tab[1]-Tab[0])
+    nvelocity= Tab[0]>=Tab[1] ? "right":"left"
+    //console.log(nvelocity+'  '+cvelocity)
+    if(!(nvelocity===cvelocity)){flip();cvelocity=nvelocity;}
+}
+ */  
+    export const NavLogo = styled(Link)`
     cursor: pointer;
     background-image: linear-gradient(
-        to right,
+        to ${gradDir},
         #F037A5,
         #1E3163 50%,
         white 50%
     );
     background-size: 200% 100%;
-    background-position: -100%;
+    background-position: ${origin};
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     &:before{
@@ -34,12 +66,14 @@ export const NavLogo = styled(Link)`
         height: 3px;
     }
     &:hover {
-        background-position: 0;
+
+        background-position: ${dest};
         }
     &:hover::before {
             width: 100%;
         }
-    transition: all 0.3s ease-in-out;
+    transition: all 0.25s ease-in-out;
+
     font-size: 1.8rem;
     padding-left:5px;
     text-decoration: none;
@@ -47,13 +81,13 @@ export const NavLogo = styled(Link)`
 
 export const NavLink = styled(Link)`
     background-image: linear-gradient(
-        to right,
+        to ${gradDir},
         #F037A5,
         #1E3163 50%,
         white 50%
     );
     background-size: 200% 100%;
-    background-position: -100%;
+    background-position: ${origin};
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     &:before{
@@ -67,7 +101,7 @@ export const NavLink = styled(Link)`
         height: 3px;
     }
     &:hover {
-        background-position: 0;
+        background-position: ${dest};
         }
     &:hover::before {
             width: 100%;
@@ -127,13 +161,13 @@ export const NavBtnLink = styled(Link)`
     text-decoration: none;
     margin-left: 24px;
     background-image: linear-gradient(
-        to right,
+        to ${gradDir},
         #F037A5,
         #1E3163 50%,
         white 50%
     );
     background-size: 200% 100%;
-    background-position: -100%;
+    background-position: ${origin};
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     &:before{
@@ -147,7 +181,7 @@ export const NavBtnLink = styled(Link)`
         height: 3px;
     }
     &:hover {
-        background-position: 0;
+        background-position: ${dest};
         }
     &:hover::before {
             width: 100%;
