@@ -6,18 +6,18 @@ const Signup=()  => {
         
         <div className="form-group" >
             
-            <input type="text" className="form-control" placeholder="First name" />
+            <input type="text" className="form-control" placeholder="First name"  required />
         <br/>
             
-            <input type="text" className="form-control" placeholder="Last name" />
+            <input type="text" className="form-control" placeholder="Last name"  required/>
         
             <br/>
              
-            <input type="email" className="form-control" placeholder="Enter email" />
+            <input type="email" className="form-control" placeholder="Enter email" required />
         
             <br/>
             
-            <input type="password" className="form-control" placeholder="Enter password" />
+            <input type="password" className="form-control" placeholder="Enter password"  required/>
             <br/>
             
           <button type="submit" className="signbutton">SIGN UP</button>

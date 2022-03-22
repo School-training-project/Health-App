@@ -1,13 +1,17 @@
 import React,{useState} from "react";
 import image from "../img/fly.png";
-import SigninForm from "./SigninForm";
-import SignupForm from "./SignupForm";
-import './signform.css';
+import SigninForm from "../components/Signout/SigninForm";
+import SignupForm from "../components/Signout/SignupForm";
+import '../components/Signout/signform.css';
+import DarkMode from '../components/DarkMode/DarkMode';
 
 export  function Signout ()  {
   const [show, setShow]= useState(true);
   return (
+    <div>
+     
     <div className="centre">
+    <DarkMode/> 
       <div className="Left">
         <h2 className="title" >WELCOME TO HEALTH APP</h2>
         <img src={image}style={{width: "85%"}} />
@@ -23,6 +27,7 @@ export  function Signout ()  {
          
         </div>
       </div>
+    </div>
     </div>
   );
 };

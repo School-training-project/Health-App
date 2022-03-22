@@ -19,7 +19,7 @@ const Navbar = () => {
                 <Bars />
                 <NavMenu>
                     <NavLink
-                        to="/"
+                        to="/home"
                     >
                         Home
                     </NavLink>
