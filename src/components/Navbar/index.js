@@ -10,17 +10,19 @@ import {
 } from "./NavbarElements";
 
 const Navbar = () => {
+    
     return (
         <>
             <Nav>
-                <NavLogo to="/">
+                <NavLogo to="/" >
+                   
                     HEALTH APP
                 </NavLogo>
                 <Bars />
                 <NavMenu>
                     <NavLink
                         to="/"
-                    >
+                    id="H">
                         Home
                     </NavLink>
                     <NavLink
