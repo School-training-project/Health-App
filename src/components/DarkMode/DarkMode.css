@@ -13,10 +13,10 @@
     filter:none;
     background-color:rgba(63, 63, 53, 0.829) ;
     cursor: pointer;
+
 }
 
 #darkMode.clicked{
     filter: none !important;
     background-color: #282c34;
-
 }
