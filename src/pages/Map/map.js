@@ -15,7 +15,7 @@ function Map() {
     <div> 
       <div style={{
         display:"flex",
-        backgroundColor:"#DCEAFC",
+        backgroundColor:"#cf6679",
         color:"#183AA8",
         borderRadius:"80px",
         justifyContent:"center",
@@ -71,7 +71,7 @@ function Map() {
                             margin: "0 auto",
                             position:"absolute",
                             border: "solid 2rem",
-                            borderColor:"#FBBB87",
+                            borderColor:"#BB86FC",
                             borderBottom:"none",
                             borderTopRightRadius:"80px",
                             borderTopLeftRadius:"80px",
