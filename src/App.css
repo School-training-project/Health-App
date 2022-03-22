@@ -10,11 +10,12 @@ body.light{
 }
 
 
-body.light{
+body.dark{
     --background-color: var(--dark);
     --text-color: var(--white);
     --font-weight:400;
 }
+
 
 body{
     background: var(--background-color);

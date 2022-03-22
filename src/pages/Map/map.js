@@ -15,8 +15,8 @@ function Map() {
     <div> 
       <div style={{
         display:"flex",
-        backgroundColor:"#cf6679",
-        color:"#183AA8",
+        backgroundColor:"#cf6679f1",
+        color:"currentColor",
         borderRadius:"80px",
         justifyContent:"center",
         textAlign:"center",
@@ -70,11 +70,11 @@ function Map() {
                             transform: "translate(-50%, -0%)",
                             margin: "0 auto",
                             position:"absolute",
-                            border: "solid 2rem",
-                            borderColor:"#BB86FC",
+                            border: "solid 7px",
+                            borderColor:"#fcbb86e7",
                             borderBottom:"none",
-                            borderTopRightRadius:"80px",
-                            borderTopLeftRadius:"80px",
+                            borderTopRightRadius:"50px",
+                            borderTopLeftRadius:"50px",
                             }}
         options={{
             zoomControl: true,
