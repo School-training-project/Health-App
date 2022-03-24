@@ -17,32 +17,45 @@ const Progress = () => {
         }]
     })
     return (
+        <>
         <div  style={{
                 display: 'flex',
                 justifyContent: 'center',
                 alignItems: 'center',
-                height: '100vh'
-            }}>  
-            <Carousel style={{color:'red'}} >
+                height: '100%'
+            }}>
+            <Carousel style={{height: '100%',
+                            width: '100%',  }}>
                 <Item>
                     <div style={{
-                display: 'flex',
-                justifyContent: 'center',
-                alignItems: 'center',}}>
+                        width:"70%",
+                        height:"70%",
+                        maxWidth: "100%",
+                        maxHeight: "100%",
+                        marginLeft:"150px"
+                }}>
                         <LineChart DataPassed={userData}/>
                     </div>
                 </Item>
                 <Item>
                     <div style={{
-                display: 'flex',
-                justifyContent: 'center',
-                alignItems: 'center',
+                        width:"70%",
+                        height:"70%",
+                        maxWidth: "100%",
+                        maxHeight: "100%",
+                        marginLeft:"150px"
                 }}> 
                             <BarChart DataPassed={userData}/>
                     </div>
                 </Item>
                 <Item>
-                    <div>
+                    <div style={{
+                        width:"30%",
+                        height:"30%",
+                        maxWidth: "100%",
+                        maxHeight: "100%",
+                        marginLeft:"350px"
+                }}>
                             <PieChart DataPassed={userData}/>
                     </div>
                 </Item>
@@ -51,6 +64,8 @@ const Progress = () => {
                 </Item>
             </Carousel>
         </div>
+        
+        </>
     );
 };
 

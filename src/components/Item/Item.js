@@ -2,7 +2,7 @@ import styled from 'styled-components'
 
 export default styled.div `
     display:flex;
-    height:500px;
+    height:100%;
     width: 100%;
     background-color:#FFFFFF00;
     color: #FFF;
