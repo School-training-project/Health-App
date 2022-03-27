@@ -45,15 +45,18 @@ body {
     margin-top: 150px;
     z-index:0;
 }
+
+/*  Change this to switch bg in darkmode*/
 .fond{
     position: relative;
     height:80px;
-    background: rgb(255, 255, 255);
+    background: #dcfcf5;
     width:440px;
     bottom: 90px;
     border-radius: 50%;
     left: 30px;
 }
+/*  Change this to switch bg in darkmode*/
 .fond > div{
     display: flex;
     position: relative;
@@ -61,14 +64,15 @@ body {
     width:520px;
     height:62px;
     bottom: 10px;
-    background: #fff;
+    background: #dcfcf5;
     border-radius:0px 0px 50px 50px;
 }
+/*  Change this to switch bg in darkmode*/
 .fond > div > div{
     position: relative;
     width:15px;
     height:22px;
-    background: rgb(255, 255, 255);
+    background: #dcfcf5;
     top:40px;
     border-radius: 45%;
     border:solid;
