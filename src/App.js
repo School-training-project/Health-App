@@ -7,7 +7,7 @@ import map from "./pages/Map/map";
 import Progress from "./pages/progress.js";
 import quiz from "./pages/quiz";
 import home from "./pages/home";
-import { Signout } from "./pages/Signout";
+import { Signout } from "./pages/signout";
 import { blog } from "./pages/blog";
 import DarkMode from "./components/DarkMode/DarkMode";
 
