@@ -1,6 +1,6 @@
 :root {
     --dark : #282c34;
-    --white: rgb(236,236,236)
+    --white: #dcfcf5;
 }
 
 body.light{
@@ -16,9 +16,11 @@ body.dark{
     --font-weight:400;
 }
 
+
 body{
     background: var(--background-color);
     color: var(--text-color);
     font-weight: var(--font-weight);
     transition: background .3s ease-in-out, color .6s ease-in-out;
 }
+

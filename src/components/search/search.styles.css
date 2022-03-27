@@ -1,0 +1,19 @@
+.search{
+    -webkit-appearance: none;
+    border: none;
+    outline: none;
+    padding: auto;
+    width: auto px ;
+    line-height: 60px;
+    margin-bottom: 15px;
+    background-color: transparent;
+    font-size: 30px;
+    text-indent: 10px;
+    color: #ffffff;
+}
+.search:hover, .search:focus {
+    border: 0.2rem solid #009688;
+    border-radius: 20px;
+    background-color: transparent;
+    
+  }

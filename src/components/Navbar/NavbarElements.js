@@ -4,7 +4,7 @@ import styled from "styled-components";
 import { useState } from "react";
 
 export const Nav = styled.nav`
-    background: rgb(63,215,180);
+    background: #6bcbb8ea;
     height: 60px;
     display: flex;
     justify-content: space-between;
