@@ -15,22 +15,23 @@ function App() {
   return (
     <Router>
       <Switch>
-          <Route path="/signin" component={Signout} />
-          <div>
+        <Route path="/signin" component={Signout} />
+        <div>
+          <div className="nav">
             <Navbar />
-            <DarkMode/>
-              <Route exact path="/" component={test} />
-              <Route path="/home" component={home} />
-              <Route path="/progress" component={Progress} />
-              <Route path="/quiz" component={quiz} />
-              <Route path="/blog" component={blog} />
-              <Route path="/map" exact component={map} />
           </div>
+          <div className="notnav">
+            <DarkMode />
+            <Route exact path="/" component={test} />
+            <Route path="/home" component={home} />
+            <Route path="/progress" component={Progress} />
+            <Route path="/quiz" component={quiz} />
+            <Route path="/blog" component={blog} />
+            <Route path="/map" exact component={map} />
+          </div>
+        </div>
       </Switch>
-      
     </Router>
-    
-    
   );
 }
 

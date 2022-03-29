@@ -17,8 +17,8 @@ body {
 
 .Q{
     pointer-events:visible;
+    bottom: 90px;
     position: relative;
-    bottom:90px;
     display: flex;
     flex-direction: column;
     justify-content: center;

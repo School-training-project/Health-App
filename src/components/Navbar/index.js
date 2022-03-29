@@ -12,7 +12,7 @@ import {
 const Navbar = () => {
 
     return (
-        <>
+        <div className='nav'>
             <Nav>
                 <NavLogo to="/" >
                    
@@ -50,7 +50,7 @@ const Navbar = () => {
                     </NavBtn>
                 </NavMenu>
             </Nav>
-        </>
+        </div>
     );
 };
 export default Navbar;

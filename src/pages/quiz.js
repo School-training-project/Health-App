@@ -10,7 +10,8 @@ function quiz() {
                 flexDirection:'column',
                 justifyContent: 'center',
                 alignItems: 'center',
-                height: '100vh'
+                height: '100vh',
+                overflow:'hidden'
             }}
         >
        
