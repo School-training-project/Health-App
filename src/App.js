@@ -10,6 +10,7 @@ import home from "./pages/home";
 import { Signout } from "./pages/signout";
 import { blog } from "./pages/blog";
 import DarkMode from "./components/DarkMode/DarkMode";
+import 'mapbox-gl/dist/mapbox-gl.css';
 
 function App() {
   return (

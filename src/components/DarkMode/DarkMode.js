@@ -1,11 +1,12 @@
 import React from "react";
 import "./DarkMode.css"
-const DarkMode = () =>{
+export const DarkMode = () =>{
     let clickedClass="clicked"
     const body = document.body;
     const lightTheme= "light"
     const darkTheme= "dark"
     let theme
+    
     
     if (localStorage) {
         theme = localStorage.getItem("theme")
@@ -24,11 +25,13 @@ const DarkMode = () =>{
             e.target.classList.remove(clickedClass);
             localStorage.setItem("theme","light");
             theme= lightTheme
+            
         }else{
             body.classList.replace(lightTheme,darkTheme);
             e.target.classList.remove(clickedClass);
             localStorage.setItem("theme","dark");
             theme= darkTheme
+            
         }
     }
     return(

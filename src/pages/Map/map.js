@@ -1,92 +1,126 @@
-import React from "react";
-import { useJsApiLoader, GoogleMap } from "@react-google-maps/api";
+import "mapbox-gl/dist/mapbox-gl.css";
+import "react-map-gl-geocoder/dist/mapbox-gl-geocoder.css";
+import React, { useState, useRef, useCallback } from "react";
+import { render } from "react-dom";
+import MapGL from "react-map-gl";
+import Geocoder from "react-map-gl-geocoder";
 
-const center = { lat: 40.8584, lng: 2.2945 };
+const MAPBOX_TOKEN =
+  "pk.eyJ1Ijoic3VwZXJoMjU3IiwiYSI6ImNsMWM4ajdkOTA1OGQzam5yampkM3c4aDEifQ.TO-_alEhY5rydxgDGaF_Kw";
 
-function Map() {
-  const { isLoaded } = useJsApiLoader({
-    googleMapsApiKey: process.env.REACT_APP_GOOGLE_MAPS_API_KEY,
+function Map1() {
+  const [viewport, setViewport] = useState({
+    longitude: 10.1815,
+    latitude: 36.8065,
+    zoom: 8
   });
-  if (!isLoaded) {
-    return <p>Loding</p>;
-  }
+  const geocoderContainerRef = useRef();
+  const mapRef = useRef();
+  const [mapstyle,setmap]=useState("mapbox://styles/superh257/cl1ia13ee008715qs6lflsbmm")
+  const handleViewportChange = useCallback(
+    (newViewport) => setViewport(newViewport),
+    []
+  );
+
+  // if you are happy with Geocoder default settings, you can just use handleViewportChange directly
+  const handleGeocoderViewportChange = useCallback(
+    (newViewport) => {
+      const geocoderDefaultOverrides = { transitionDuration: 1000 };
+
+      return handleViewportChange({
+        ...newViewport,
+        ...geocoderDefaultOverrides
+      });
+    },
+    [handleViewportChange]
+  );
 
   return (
-    <div> 
-      <div style={{
-        display:"flex",
-        backgroundColor:"#cf6679f1",
-        color:"currentColor",
-        borderRadius:"80px",
-        justifyContent:"center",
-        textAlign:"center",
-        fontSize:"20px",
-        overflow:"visible",
-        marginLeft:"50px",
-        marginRight:"50px"
-        
-      }}>
+    <div>
+      <div
+        style={{
+          display: "flex",
+          backgroundColor: "var(--back-div)",
+          color: "currentColor",
+          borderRadius: "80px",
+          justifyContent: "center",
+          textAlign: "center",
+          fontSize: "20px",
+          overflow: "visible",
+          marginLeft: "50px",
+          marginRight: "50px",
+        }}
+      >
         <ul>
-          <li style={{
-            transform:"translate(0,20px)",
-          }}>
-            Nutrition Stores
+          <li
+            style={{
+              transform: "translate(0,20px)",
+            }}
+          >
+            <a href="#" style={{color: 'var(--text-color)',transition: 'background .3s ease-in-out, color .6s ease-in-out',textDecoration: 'inherit',cursor: 'inherit'}}>Nutrition Stores</a>
           </li>
-          <li style={{
-            transform:"translate(0,200px)",
-          }}>
-            Pinned locations
+          <li
+            style={{
+              transform: "translate(0,200px)",
+            }}
+          >
+            <a href="#" style={{color: 'var(--text-color)',transition: 'background .3s ease-in-out, color .6s ease-in-out',textDecoration: 'inherit',cursor: 'inherit'}}>Pinned Locations</a>
           </li>
         </ul>
-        <img src={require("./map.png")} style={{
-          height:"320px",
-          objectFit:"cover",
-          width:"350px",
-          transform:"translate(-70px,-15px)",
-          padding:"0",
-          margin:"0"
-        }}></img>
+        <iframe
+          src="https://giphy.com/embed/3gJTIZdFKjngOEhSSG"
+          width="300"
+          height="300"
+          frameBorder="0"
+          class="giphy-embed"
+          style={{ objectFit: "cover", transform: "translate(0px,-45px)" }}
+        ></iframe>
         <ul>
-          <li style={{
-            transform:"translate(0,20px)",
-          }}>
-            Infirmary
+          <li
+            style={{
+              transform: "translate(0,20px)",
+            }}
+          >
+            <a href="#" style={{color: 'var(--text-color)',transition: 'background .3s ease-in-out, color .6s ease-in-out',textDecoration: 'inherit',cursor: 'inherit'}}>Infirmary</a>
           </li>
-          <li style={{
-            transform:"translate(0,200px)",
-          }}>
-            Pharmacies
+          <li
+            style={{
+              transform: "translate(0,200px)",
+            }}
+          >
+            <a href="#" style={{color: 'var(--text-color)',transition: 'background .3s ease-in-out, color .6s ease-in-out',textDecoration: 'inherit',cursor: 'inherit'}}>Pharmacies</a>
           </li>
         </ul>
       </div>
-      <GoogleMap
-        center={center}
-        zoom={15}
-        mapContainerStyle={{
-                            width: "70%", 
-                            height: "50%",
-                            bottom:"0px",
-                            left:"50%",
-                            transform: "translate(-50%, -0%)",
-                            margin: "0 auto",
-                            position:"absolute",
-                            border: "solid 7px",
-                            borderColor:"#fcbb86e7",
-                            borderBottom:"none",
-                            borderTopRightRadius:"50px",
-                            borderTopLeftRadius:"50px",
-                            }}
-        options={{
-            zoomControl: true,
-            streetViewControl: true,
-        }}
+     <div className="map-container">
+      <div
+        ref={geocoderContainerRef}
+        style={{ position: "absolute", top: 20, left: 20, zIndex: 1 ,borderTopRightRadius:'50px',
+        borderTopLeftRadius:'50px'}}
+      />
+      <MapGL
+        ref={mapRef}
+        {...viewport}
+        mapStyle="mapbox://styles/superh257/cl1ia13ee008715qs6lflsbmm"
+        width="100%"
+        height="100%"
+        style={{borderTopRightRadius:'50px',
+          borderTopLeftRadius:'50px'}}
+        onViewportChange={handleViewportChange}
+        mapboxApiAccessToken={MAPBOX_TOKEN}
       >
-        
-      </GoogleMap>
-      
-      
+        <Geocoder
+          mapRef={mapRef}
+          containerRef={geocoderContainerRef}
+          onViewportChange={handleGeocoderViewportChange}
+          mapboxApiAccessToken={MAPBOX_TOKEN}
+          position="top-left"
+          
+        />
+      </MapGL>
+    </div>
     </div>
   );
 }
 
-export default Map;
+export default Map1;
