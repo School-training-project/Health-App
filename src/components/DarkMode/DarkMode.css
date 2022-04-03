@@ -1,5 +1,5 @@
 #darkMode{
-    background: transparent url(./sun.svg) no-repeat center;
+    background: transparent var(--img) no-repeat center;
     background-size: 30px 30px;
     width: 45px;
     height: 45px;
