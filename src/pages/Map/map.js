@@ -2,7 +2,7 @@ import "mapbox-gl/dist/mapbox-gl.css";
 import "react-map-gl-geocoder/dist/mapbox-gl-geocoder.css";
 import React, { useState, useRef, useCallback } from "react";
 import { render } from "react-dom";
-import MapGL from "react-map-gl";
+import Map ,{GeolocateControl,NavigationControl}from "react-map-gl";
 import Geocoder from "react-map-gl-geocoder";
 
 const MAPBOX_TOKEN =
@@ -14,6 +14,12 @@ function Map1() {
     latitude: 36.8065,
     zoom: 8
   });
+  const geolocateControlRef = React.useCallback((ref) => {
+    if (ref) {
+      // Activate as soon as the control is loaded
+      ref.trigger();
+    }
+  }, []);
   const geocoderContainerRef = useRef();
   const mapRef = useRef();
   const [mapstyle,setmap]=useState("mapbox://styles/superh257/cl1ia13ee008715qs6lflsbmm")
@@ -98,17 +104,19 @@ function Map1() {
         style={{ position: "absolute", top: 20, left: 20, zIndex: 1 ,borderTopRightRadius:'50px',
         borderTopLeftRadius:'50px'}}
       />
-      <MapGL
+      <Map
         ref={mapRef}
         {...viewport}
-        mapStyle="mapbox://styles/superh257/cl1ia13ee008715qs6lflsbmm"
         width="100%"
         height="100%"
+        mapStyle="mapbox://styles/mapbox/streets-v9"
         style={{borderTopRightRadius:'50px',
-          borderTopLeftRadius:'50px'}}
+                borderTopLeftRadius:'50px',
+                }}
         onViewportChange={handleViewportChange}
         mapboxApiAccessToken={MAPBOX_TOKEN}
       >
+        
         <Geocoder
           mapRef={mapRef}
           containerRef={geocoderContainerRef}
@@ -117,7 +125,8 @@ function Map1() {
           position="top-left"
           
         />
-      </MapGL>
+        <GeolocateControl ref={geolocateControlRef} />
+      </Map>
     </div>
     </div>
   );
