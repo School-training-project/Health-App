@@ -1,18 +1,102 @@
 import React from "react";
+import '../components/Homestyle/homestyle.css'
 
-const Progress = () => {
+const Home = () => {
+    const dotw = ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"]
+    const moty = ["January","February","March","April","May","June","July","August","September","October","November","December"]
+    const D= new Date()
+    let str=D.getDate().toString()
+    
+    
+    function thf(str){
+        switch (str[str.length-1]) {
+            case '1':
+                return 'st'
+                break;
+            case '2':
+                return 'nd'
+                break;
+            case '3':
+                return 'rd'
+                break;
+            default:
+                return 'th'
+                break;
+        }
+    };
+    let th=thf(str)
+
+    const today =dotw[D.getDay()].toString()+' '+moty[D.getMonth()].toString()+'   '+D.getDate().toString()+th+'  '+D.getFullYear().toString()
+
+    let hoursSlept=5 //this will come from the user input
+    let idealhrs=8
+
+    let hrsNum=(200*hoursSlept)/(idealhrs*2) //assuming No more than 16 hours of sleep
+    hrsNum= hrsNum>200 ? 200:hrsNum //preventing Overflow
+    let hrs=hrsNum.toString()+"px" //conversting to pixels
+
+    let caloriesBurnt=400  //this will come from the user input
+    let idealcalb=500
+    
+    let calbNum=(200*caloriesBurnt)/idealcalb //assuming 500 is ideal
+    let calb=calbNum.toString()+"px"
+    calb= calbNum>500 ? "+500 kcal":calb
+
+    let caloriesConsumed=2700 //this will come from user input
+    let idealcalc=3500
+    
+    let calcNum=(200*caloriesConsumed)/idealcalc //assuming 3500 for male
+    let calc=calcNum.toString()+"px"
+    calc= calcNum>3500 ? "+3500 kcal":calc
+    
+    let stepsWalked=6000 //this will come from user input
+    let idealstps=10000
+    let stpsNum=(200*stepsWalked)/idealstps //assuming 10,000 ideal
+    let stps=stpsNum.toString()+"px"
+    stps= stpsNum>10000 ? "+10000 kcal":stps
+
     return (
-        <div
-            style={{
-                display: 'flex',
-                justifyContent: 'center',
-                alignItems: 'center',
-                height: '100vh'
-            }}
-        >
-            <h1>home</h1>
+        <div className="Container">
+            <div className="Date">{today}</div>
+            <div className="Data">
+            <div className="topElements">
+                <div className="box" id="TL">
+                    <h2>Hours Slept</h2>
+                    <div className="info" id="hoursSlept">{`${hoursSlept}`} hours</div>
+                    <div className="barM">
+                        <div className="cursor" style={{transition:'transform 2s ease-in-out',transform:`translateX(${hrs})`}}></div>
+                    </div>
+                </div>
+                <div className="box" id="TR">
+                    <h2>Calories Burnt</h2>
+                    <div className="info"  id="caloriesBurnt">{`${caloriesBurnt}`} kcal</div>
+                    <div className="barL">
+                    <div className="cursor" style={{transform:`translateX(${calb})`}}></div>
+                    </div>
+                </div>
+            </div>
+            <div className="midElements">
+                <img src={require("../components/Homestyle/mratsallem.png")} className="Image"></img>
+            </div>
+            <div className="botElements">
+                <div className="box" id="BL">
+                    <h2>Calories Consumed</h2>
+                    <div className="info"  id="caloriesConsumed">{`${caloriesConsumed}`} kcal</div>
+                    <div className="barL">
+                    <div className="cursor" style={{transform:`translateX(${calc})`}}></div>
+                    </div>
+                </div>
+                <div className="box" id="BR">
+                    <h2>Steps Walked</h2>
+                    <div className="info"  id="stepsWalked">{`${stepsWalked}`} steps</div>
+                    <div className="barL">
+                    <div className="cursor" style={{transform:`translateX(${stps})`}}></div>
+                    </div>
+                </div>
+            </div>
+            </div>
         </div>
     );
 };
 
-export default Progress;
+export default Home;
