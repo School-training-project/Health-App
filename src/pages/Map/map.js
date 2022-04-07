@@ -1,8 +1,7 @@
 import "mapbox-gl/dist/mapbox-gl.css";
 import "react-map-gl-geocoder/dist/mapbox-gl-geocoder.css";
 import React, { useState, useRef, useCallback } from "react";
-import { render } from "react-dom";
-import Map ,{GeolocateControl,NavigationControl}from "react-map-gl";
+import Map ,{GeolocateControl}from "react-map-gl";
 import Geocoder from "react-map-gl-geocoder";
 
 const MAPBOX_TOKEN =
