@@ -60,14 +60,14 @@ const Home = () => {
             <div className="Date">{today}</div>
             <div className="Data">
             <div className="topElements">
-                <div className="box" id="TL">
+                <div className="box" id="TLh">
                     <h2>Hours Slept</h2>
                     <div className="info" id="hoursSlept">{`${hoursSlept}`} hours</div>
                     <div className="barM">
                         <div className="cursor" style={{transition:'transform 2s ease-in-out',transform:`translateX(${hrs})`}}></div>
                     </div>
                 </div>
-                <div className="box" id="TR">
+                <div className="box" id="TRh">
                     <h2>Calories Burnt</h2>
                     <div className="info"  id="caloriesBurnt">{`${caloriesBurnt}`} kcal</div>
                     <div className="barL">
@@ -79,14 +79,14 @@ const Home = () => {
                 <img src={require("../components/Homestyle/mratsallem.png")} className="Image"></img>
             </div>
             <div className="botElements">
-                <div className="box" id="BL">
+                <div className="box" id="BLh">
                     <h2>Calories Consumed</h2>
                     <div className="info"  id="caloriesConsumed">{`${caloriesConsumed}`} kcal</div>
                     <div className="barL">
                     <div className="cursor" style={{transform:`translateX(${calc})`}}></div>
                     </div>
                 </div>
-                <div className="box" id="BR">
+                <div className="box" id="BRh">
                     <h2>Steps Walked</h2>
                     <div className="info"  id="stepsWalked">{`${stepsWalked}`} steps</div>
                     <div className="barL">

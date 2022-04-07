@@ -20,7 +20,7 @@
 .Data{
     position: relative;
     width: 80%;
-    bottom:130px;
+    bottom:118px;
 }
 .topElements{
     z-index: 1;
@@ -74,24 +74,24 @@
     color: rgb(243, 84, 22);
 }
 
-#TL {
+#TLh {
     position: relative;
     top:80px;
     background: linear-gradient(270deg, rgba(255,255,255,1) 0%, rgba(220,234,252,1) 30%, rgba(220,234,252,1) 100%);
 }
 
-#BL {
+#BLh {
     position: relative;
     bottom:50px;
     height: 200px;
     background: linear-gradient(270deg, rgba(255,255,255,1) 0%, rgba(220,234,252,1) 30%, rgba(220,234,252,1) 100%);
 }
 
-#TR {
+#TRh {
     background: linear-gradient(90deg, rgba(255,255,255,1) 0%, rgba(220,234,252,1) 30%, rgba(220,234,252,1) 100%);
 }
 
-#BR {
+#BRh {
     background: linear-gradient(90deg, rgba(255,255,255,1) 0%, rgba(220,234,252,1) 30%, rgba(220,234,252,1) 100%);
 }
 
