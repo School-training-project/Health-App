@@ -34,30 +34,6 @@ const userDataSchema = new mongoose.Schema({
     });
 const Credential = mongoose.model("Credential", credentialsSchema);
 const Data = mongoose.model("Data",userDataSchema)
-// Create User Tabel
-export const createUser= async ()=> {
-    const credential= new Credential({
-        userName:'hafedh ben slama',
-        email:'hafedhbenslama@gmail.com',
-        password:'./'
-    })
-    const result = await credential.save()
-    console.log(result)
-}
 
-export const createUserData=async()=>{
-    const data= new Data({
-        email:'hafedhbenslama@gmail.com',
-        caloriesBurnt:{calories:80,day:Date()},
-        stepsWalked:{steps:80,day:Date()},
-        caloriesIncome:{calories:80,day:Date()},
-        hoursSlept:{sleep:80,day:Date()},
-    })
-}
-
-
-const getUser = async () => {
-    const users = await Credential.find();
-    console.log(users);
-};
-getUser();
+module.exports.Credential=Credential
+module.exports.Data=Data
