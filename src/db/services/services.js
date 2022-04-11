@@ -24,12 +24,13 @@ const createUserData=async(obj)=>{
 
 
 const getUserData= async (obj={})=>{
-    const data= await db.Data.find(obj)
+    const data= await db.Data.find({filter:obj})
     console.log(data)
+    return data
 }
 
 const getUser = async (obj={}) => {
-    const users = await db.Credential.find(obj);
+    const users = await db.Credential.find({filter:obj});
     console.log(users);
 };
 
@@ -43,12 +44,12 @@ const updateUserData = async (obj={},cond)=>{
     console.log(result)
 } 
 
-const removeUser = async (id) =>{
-    const result = await db.Credential.deleteOne({_id:id})
+const removeUser = async (obj) =>{
+    const result = await db.Credential.deleteOne({filter:obj})
     console.log(result)
 }
 const removeUserData = async (obj) =>{
-    const result = await db.Data.deleteOne(obj)
+    const result = await db.Data.deleteOne({filter:obj})
     console.log(result)
 }
 
