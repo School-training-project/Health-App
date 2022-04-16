@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState ,useEffect} from "react";
 import { BarChart } from "../components/Charts/Barchart";
 import { UserData } from "../components/Charts/Data";
 import { LineChart } from "../components/Charts/LineChart";
@@ -6,16 +6,42 @@ import { PieChart } from "../components/Charts/PieChart";
 import Carousel from "react-elastic-carousel"
 import Item from "../components/Item/Item";
 const Progress = () => {
+    const [caloriesData,setCaloriesData]=useState([])
+    const [loading, setLoading] = useState(false);
+    const [error, setError] = useState();
+    useEffect(()=>{
+        const url ="http://localhost:3001/userdata"
+        const fetchData= async ()=>{
+            try{
+                setLoading(true)
+                const response = await fetch(url)
+                const json= await response.json()
+                setCaloriesData(json[0].caloriesBurnt)
+                
+            }catch(err){
+                console.log("error",err)
+            }finally{setLoading(false)}
+        }
+        fetchData()
+    },[])
+    
     const [userData, setUserData] = useState({
-        labels: UserData.map((data)=> data.year),
+        labels: caloriesData.map(i=>i.day),
         datasets: [{
             label: "Users Gained",
-            data: UserData.map((data)=> data.userGain),
+            data: caloriesData.map((data)=> data.calories),
             backgroundColor: ["#82C272", "#00A88F", "#0087AC", "#005FAA", "#323B81"],
-            borderColor: "gray",
+            borderColor: "red",
             borderWidth:"2"
         }]
     })
+    if (loading) {
+        return <p>Data is loading...</p>;
+        }
+    if (error || !Array.isArray(caloriesData)) {
+        return <p>There was an error loading your data!</p>;
+    }
+    console.log(caloriesData)
     return (
         <>
         <div  style={{

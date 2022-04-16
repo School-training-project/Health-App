@@ -11,15 +11,15 @@ const Home = () => {
     const [stepsWalkeddb,setSteps]=useState()
     const [caloriesIncome,setCaloriesIncome]=useState()
     useEffect(()=>{
-        const url ="http://localhost:3001/home"
+        const url ="http://localhost:3001/userdata"
         const fetchData= async ()=>{
             try{
                 const response = await fetch(url)
                 const json= await response.json()
-                setSleep(json[0].hoursSlept.sleep)
-                setcaloriesBurnt(json[0].caloriesBurnt.calories)
-                setSteps(json[0].stepsWalked.steps)
-                setCaloriesIncome(json[0].caloriesIncome.calories)
+                setSleep(json[0].hoursSlept[json[0].hoursSlept.length -1].sleep)
+                setcaloriesBurnt(json[0].caloriesBurnt[json[0].caloriesBurnt.length -1].calories)
+                setSteps(json[0].stepsWalked[json[0].stepsWalked.length -1].steps)
+                setCaloriesIncome(json[0].caloriesIncome[json[0].caloriesIncome.length -1].calories)
             }catch(err){
                 console.log("error",err)
             }
@@ -96,7 +96,7 @@ const Home = () => {
             </div>
             <div className="botElements">
                 <div className="box" id="BLh">
-                    <h2>Calories Consumed</h2>
+                    <h2>Calories Income</h2>
                     <div className="info"  id="caloriesConsumed">{`${caloriesConsumed}`} kcal</div>
                     <div className="barL">
                     <div className="cursor" style={{transition:'transform 2s ease-in-out',transform:`translateX(${calc})`}}></div>
