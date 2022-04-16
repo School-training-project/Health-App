@@ -9,14 +9,18 @@ const Home = () => {
     
     
     function thf(str){
+        
         switch (str[str.length-1]) {
             case '1':
+                if(str=='11'){return 'th';break}
                 return 'st'
                 break;
             case '2':
+                if(str=='12'){return 'th';break}
                 return 'nd'
                 break;
             case '3':
+                if(str=='13'){return 'th';break}
                 return 'rd'
                 break;
             default:
