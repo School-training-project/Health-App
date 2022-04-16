@@ -24,32 +24,52 @@ const createUserData=async(obj)=>{
 
 
 const getUserData= async (obj={})=>{
-    const data= await db.Data.find({filter:obj})
+    const data= await db.Data.find(obj)
     console.log(data)
     return data
 }
 
 const getUser = async (obj={}) => {
-    const users = await db.Credential.find({filter:obj});
+    const users = await db.Credential.find(obj);
     console.log(users);
 };
 
 const updateUser = async (obj={},cond)=>{
-    const result = await db.Credential.updateOne({filter:cond},{$set:obj})
+    const result = await db.Credential.updateOne(cond,{$set:obj})
     console.log(result)
 } 
 
 const updateUserData = async (obj={},cond)=>{
-    const result = await db.Data.updateOne({filter:cond},{$set:obj})
+    const result = await db.Data.updateOne(cond,{$set:obj})
     console.log(result)
 } 
+const pushObjDataHoursSlept = async (number,cond)=>{
+    const result =await db.Data.updateOne(cond,{$push:{hoursSlept:{sleep:number,day:Date()}}})
+    console.log(result)
+    return result
+}
+const pushObjDataStepsWalked = async (number,cond)=>{
+    const result =await db.Data.updateOne(cond,{$push:{stepsWalked:{steps:number,day:Date()}}})
+    console.log(result)
+    return result
+}
+const pushObjDataCaloriesBurnt = async (number,cond)=>{
+    const result =await db.Data.updateOne(cond,{$push:{caloriesBurnt:{calories:number,day:Date()}}})
+    console.log(result)
+    return result
+}
+const pushObjDataCaloriesIncome = async (number,cond)=>{
+    const result =await db.Data.updateOne(cond,{$push:{caloriesIncome:{calories:number,day:Date()}}})
+    console.log(result)
+    return result
+}
 
 const removeUser = async (obj) =>{
-    const result = await db.Credential.deleteOne({filter:obj})
+    const result = await db.Credential.deleteOne(obj)
     console.log(result)
 }
 const removeUserData = async (obj) =>{
-    const result = await db.Data.deleteOne({filter:obj})
+    const result = await db.Data.deleteOne(obj)
     console.log(result)
 }
 
@@ -60,4 +80,8 @@ module.exports.updateUserData=updateUserData
 module.exports.createUser=createUser
 module.exports.getUser=getUser
 module.exports.getUserData=getUserData
+module.exports.pushObjDataHoursSlept=pushObjDataHoursSlept
+module.exports.pushObjDataStepsWalked=pushObjDataStepsWalked
+module.exports.pushObjDataCaloriesBurnt=pushObjDataCaloriesBurnt
+module.exports.pushObjDataCaloriesIncome=pushObjDataCaloriesIncome
 module.exports.createUserData=createUserData
