@@ -103,6 +103,7 @@ function Map1() {
         style={{ position: "absolute", top: 20, left: 20, zIndex: 1 ,borderTopRightRadius:'50px',
         borderTopLeftRadius:'50px'}}
       />
+       
       <Map
         ref={mapRef}
         {...viewport}
@@ -111,6 +112,7 @@ function Map1() {
         mapStyle="mapbox://styles/mapbox/streets-v9"
         style={{borderTopRightRadius:'50px',
                 borderTopLeftRadius:'50px',
+                marginTop:'50px'
                 }}
         onViewportChange={handleViewportChange}
         mapboxApiAccessToken={MAPBOX_TOKEN}

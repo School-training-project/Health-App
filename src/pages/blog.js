@@ -1,15 +1,24 @@
-import React from 'react'
+import React, { createContext, useEffect, useState } from 'react'
+import axios from "axios";
+import { ContextProvider } from "../components/Blog/Context";
+import Articles from "../components/Blog/Articles";
+import '../components/Blog/blogstyle.css';
 
 export const blog=(props)=>{
     return (
-        <div
+        <div className="center"
             style={{
-                display: 'flex',
+                
                 justifyContent: 'center',
                 alignItems: 'center',
-                height: '100vh'
+                height: '100vh',
+                
+                
         }}>
-            <h1>blog</h1>
+            
+            <ContextProvider >
+                <Articles/>
+            </ContextProvider>
         </div>
     )
 }
