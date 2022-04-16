@@ -5,7 +5,7 @@ const db=require('../db/services/services')
 
 
 router.get('/',async(req,res)=>{
-    const result=await db.getUserData({email:'test123test@123.test'})
+    const result=await db.getUserData({email:'root.root@root.root'})
     res.json(result).status(200)
 })
 

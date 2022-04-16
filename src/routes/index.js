@@ -1,4 +1,4 @@
-const home = require('./home')
+const userdata = require('./userdata')
 const express=require('express')
 const res = require("express/lib/response");
 const cors = require('cors')
@@ -11,4 +11,4 @@ app.listen(port, () => {
     console.log(`listening on port ${port}....`);
 });
 
-app.use('/home',home)
+app.use('/userdata',userdata)
