@@ -92,7 +92,7 @@ const click = () => {
     return(
         <div class="Q">
             <div className="prog" style={{transform:`translateY(${shazam})`,transition:`${shazamtr}`}}>
-                <div className="bar" style={{background:`linear-gradient(90deg,rgba(63,215,180,1) 0%,#183AA8  ${perc}, rgba(220,234,252,1) ${perc}`}}>
+                <div className="bar" style={{background:`linear-gradient(90deg,#fe7172 0%,#4f4cc5  ${perc}, #bed5ff ${perc}`}}>
                 <div className="fond">
                     <div className="topmask">
                         <div id="righter"></div>

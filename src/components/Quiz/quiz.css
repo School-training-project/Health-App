@@ -80,7 +80,7 @@ body {
     top:40px;
     border-radius: 45%;
     border:solid;
-    border-color: rgba(63,215,180,1);
+    border-color: #fe7172;
 }
 #righter {
     position: relative;
@@ -110,7 +110,7 @@ body {
     z-index: 4;
     grid-row:2;
     height: 30px;
-    background-color:var(--Dark-blue);
+    background-color:#4568e8;
     /*left: 20px;*/
     /*transform: translate(var(--dotx),var(--doty));
 */
@@ -127,9 +127,10 @@ body {
     margin-top: -75px;
     margin-bottom: 20px;
     color: var(--text-div);
-    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    font-size:38px;
+    font-family:Arial Narrow;
+    font-size:35px;
     font-weight: bold;
+    
     transition: background .3s ease-in-out, color 0.6s ease-in-out;
 
 }
@@ -144,8 +145,11 @@ body {
     bottom: 0px;
     border:solid;
     border-width:4px;
-    border-radius: 60px;
-    border-color: var(--Dark-blue);
+    border-radius: 25px;
+    border-style: none!important;
+    box-shadow: rgba(0, 0, 0, 0.2) 0px 7px 29px 0px;
+    
+    /*border-color: var(--Dark-blue);*/
     z-index:3;
 }
 
@@ -154,11 +158,14 @@ body {
     display: flex;
     flex-direction: column;
     justify-items: center;
-    background-color: #fff;
+    background-color: var(--answer--box);
     /*transition: background-color .2s;*/
     border: solid;
     border-color: var(--Dark-blue);
     border-width:2px;
+    border-style: none!important;
+    
+    
 }
 /*
 .Box:hover{
@@ -175,16 +182,17 @@ body {
     margin:0px;
     padding: 0px;
     background-color: var(--back-question);
+    
     transition: background-color .2s;
     transition: background .3s ease-in-out, color .6s ease-in-out;
     color: var(--text-div);
-    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    font-size:38px;
+    font-family:Arial Narrow;
+    font-size:30px;
  font-weight: bold;
 }
 
 .Box [type="submit"]:hover{
-    background-color:rgba(63,215,180,0.3);
+    background-color:var(--answer--box);
     transition:.2s ease-in-out;
 }
 
@@ -195,6 +203,7 @@ body {
     margin-right:10px; */
     grid-column: 1;
     grid-row: 1;
+    
 }
 #TR {
     /*margin-top:20px;
@@ -224,6 +233,7 @@ body {
     position: relative;
     bottom: 780px;
     z-index: 4;
+    
 }
 .imgcontainer{
     position: relative;

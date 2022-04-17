@@ -1,16 +1,18 @@
 :root {
-    --dark : #282c34;
-    --white: #dcfcf5;
+    --dark : #101a2e;
+    --white: #eceef2;
     --dark-div:#FFD36E;
     --light-div:#5584AC;
     --sun:url('./components/DarkMode/sun.svg');
     --moon:url('./components/DarkMode/moon.svg');
-    --text-light:#3ba8c9;
-    --text-dark:#2e5951;
-    --dark-question:#b6e7de;
-    --light-question:#64bdd888;
-    --linear-lightbackground:linear-gradient(90deg, rgba(109,210,180,1) 12%, rgba(29,66,168,1) 79%);
-    --linear-darkbackground:linear-gradient(270deg, rgba(109,210,180,1) 12%, rgba(29,66,168,1) 79%);
+    --text-light:#fff;
+    --text-dark: #101a2e;
+    --dark-question:#04b2db ;
+    --light-question:#bed5ff;
+    --dark--answer--box:#3859cf;
+    --light--answer--box: #abb1fd;
+    --linear-lightbackground: #1e2d53 ;
+    --linear-darkbackground:#fff;
     --light-map:url(mapbox://styles/mapbox/streets-v11);
     --dark-map:url(mapbox://styles/superh257/cl1i3cdo5004l16rzsgbhrw3w)
 }
@@ -24,7 +26,8 @@ body.light{
     --text-div:var(--text-dark);
     --back-question:var(--light-question);
     --linear-background:var(--linear-darkbackground);
-    --map-theme:var(--light-map)
+    --map-theme:var(--light-map);
+    --answer--box: var( --light--answer--box)
 }
 
 
@@ -37,6 +40,7 @@ body.dark{
     --text-div:var(--text-light);
     --back-question: var(--dark-question);
     --linear-background:var(--linear-lightbackground);
+    --answer--box: var( --dark--answer--box)
 }
 
 
