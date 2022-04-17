@@ -8,6 +8,7 @@ import {
     NavBtn,
     NavBtnLink,
 } from "./NavbarElements";
+import logo from "./logoblanc.png"
 
 const Navbar = () => {
 
@@ -15,8 +16,8 @@ const Navbar = () => {
         <div className='nav'>
             <Nav>
                 <NavLogo to="/" >
-                   
-                    HEALTH APP
+                <img src={logo} style={ {width:"7%" }}/>
+                    ZENLY
                 </NavLogo>
                 <Bars />
                 <NavMenu>
@@ -46,7 +47,7 @@ const Navbar = () => {
                         Map
                     </NavLink>
                     <NavBtn>
-                        <NavBtnLink to="/signIn">Sign out</NavBtnLink>
+                        <NavBtnLink to="/signIn">Signout</NavBtnLink>
                     </NavBtn>
                 </NavMenu>
             </Nav>

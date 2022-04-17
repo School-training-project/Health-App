@@ -9,12 +9,14 @@
     --text-dark: #101a2e;
     --dark-question:#04b2db ;
     --light-question:#bed5ff;
-    --dark--answer--box:#3859cf;
-    --light--answer--box: #abb1fd;
+    --dark--answer--box:#fc5c6f;
+    --light--answer--box: #fdabb1;
     --linear-lightbackground: #1e2d53 ;
     --linear-darkbackground:#fff;
     --light-map:url(mapbox://styles/mapbox/streets-v11);
-    --dark-map:url(mapbox://styles/superh257/cl1i3cdo5004l16rzsgbhrw3w)
+    --dark-map:url(mapbox://styles/superh257/cl1i3cdo5004l16rzsgbhrw3w);
+    --dark--gradient:linear-gradient(270deg, #1e2d53 0%, #414f75  30%, #1e2d53 100%);
+    --light--gradient:linear-gradient(270deg, #bed5ff 0%, rgba(220,234,252,1) 30%, #bed5ff 100%);
 }
 
 body.light{
@@ -27,7 +29,8 @@ body.light{
     --back-question:var(--light-question);
     --linear-background:var(--linear-darkbackground);
     --map-theme:var(--light-map);
-    --answer--box: var( --light--answer--box)
+    --answer--box: var( --light--answer--box);
+    --gradient--:var(--light--gradient)
 }
 
 
@@ -40,7 +43,8 @@ body.dark{
     --text-div:var(--text-light);
     --back-question: var(--dark-question);
     --linear-background:var(--linear-lightbackground);
-    --answer--box: var( --dark--answer--box)
+    --answer--box: var( --dark--answer--box);
+    --gradient--:var(--dark--gradient)
 }
 
 

@@ -65,17 +65,17 @@ const Home = () => {
             <div className="Data">
             <div className="topElements">
                 <div className="box" id="TLh">
-                    <h2>Hours Slept</h2>
+                    <h3>Hours Slept</h3>
                     <div className="info" id="hoursSlept">{`${hoursSlept}`} hours</div>
                     <div className="barM">
                         <div className="cursor" style={{transition:'transform 2s ease-in-out',transform:`translateX(${hrs})`}}></div>
                     </div>
                 </div>
                 <div className="box" id="TRh">
-                    <h2>Calories Burnt</h2>
+                    <h3>Calories Burnt</h3>
                     <div className="info"  id="caloriesBurnt">{`${caloriesBurnt}`} kcal</div>
                     <div className="barL">
-                    <div className="cursor" style={{transform:`translateX(${calb})`}}></div>
+                  <div className="cursor" style={{transform:`translateX(${calb})`}}></div>
                     </div>
                 </div>
             </div>
@@ -84,14 +84,15 @@ const Home = () => {
             </div>
             <div className="botElements">
                 <div className="box" id="BLh">
-                    <h2>Calories Consumed</h2>
+                    <h3>Calories Consumed</h3>
                     <div className="info"  id="caloriesConsumed">{`${caloriesConsumed}`} kcal</div>
                     <div className="barL">
                     <div className="cursor" style={{transform:`translateX(${calc})`}}></div>
                     </div>
                 </div>
                 <div className="box" id="BRh">
-                    <h2>Steps Walked</h2>
+                    <h3>Steps Walked</h3>
+                    
                     <div className="info"  id="stepsWalked">{`${stepsWalked}`} steps</div>
                     <div className="barL">
                     <div className="cursor" style={{transform:`translateX(${stps})`}}></div>
