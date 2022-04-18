@@ -19,84 +19,73 @@
   
  
   .news__img{
-    width:20%
+    width:40%
+
   }
 
   .all__news {
     margin: 50px auto;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    grid-gap: 20px;
+    grid-gap: 30px;
   }
   
   .news {
     
-    max-width: 400px;
-    padding: 30px;
-    border: 1px solid ;
-    border-radius: 5px;
+    max-width: 380px;
+    background-color: var(--linear-background);
+    border-radius:15px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+   
   }
   .news__img{
-    width: 100%;
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
+    width: 380px;
+    height: 250px;
+    overflow: hidden;
+    margin-right: 50px;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+    
+    
   }
   
   .news__title {
-    padding-bottom: 10px;
-    border-bottom: 1px solid ;
+    font-size: 25px;
+    font-family: Bahnschrift SemiBold;
     text-align: justify;
     text-justify: inter-word;
-  }
-  
-  .head__text {
-    margin-top: 30px;
-  }
-  
-  .news__desc {
-    padding-top: 10px;
-    line-height: 25px;
-    font-size: 14px;
-    padding-bottom: 10px;
-    text-align: justify;
-    text-justify: inter-word;
-  }
-  
-  
-  
-  .news__published {
-    margin-right: 10px;
-  }
-  
-  .news__source,
-  .news__published {
-    display: inline-block;
-    margin-top: 10px;
-    color: rgb(122, 122, 122);
-  }
-  .news__button{
-    background-color: #ccefe8 ;
- border-radius:4px;
- border:0px;
- color: #2e5951;
- font-family:calibri;
- font-weight: bold;
- height: 6%;
- width:30%;
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-  margin-top:20px;
- transition-duration: 0.4s;
+    padding: 20px;
 
   }
-  .news__button:hover {
-    background-color: #2e5951;
-    color: #ccefe8;
+  
+  
+  
+  .news__desc {
+    
+    font-size: 16px;
+    font-family: 	
+    Arial Nova;
+    text-align: justify;
+    text-justify: inter-word;
+    padding: 20px;
   }
+  
+  
+  
+ 
+  
+  
+  
   .head__text{
-    font-family:calibri;
-    text-align:center;
+    font-family: Bahnschrift SemiBold;
+    margin-top: 30px;
     text-transform: uppercase;
+  }
+  .link {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1;
   }
