@@ -1,6 +1,25 @@
 const db= require("../dbConnection")
 
-
+const months = [
+    'January',
+    'February',
+    'March',
+    'April',
+    'May',
+    'June',
+    'July',
+    'August',
+    'September',
+    'October',
+    'November',
+    'December'
+]
+const d = new Date()
+const date = d.getDate()
+const monthIndex = d.getMonth()
+const monthName = months[monthIndex]
+const year = d.getFullYear()
+const formatted = `${date} ${monthName} ${year}`
 
 const createUser= async (obj)=> {
     const credential= new db.Credential({
@@ -44,22 +63,27 @@ const updateUserData = async (obj={},cond)=>{
     console.log(result)
 } 
 const pushObjDataHoursSlept = async (number,cond)=>{
-    const result =await db.Data.updateOne(cond,{$push:{hoursSlept:{sleep:number,day:Date()}}})
+    const result =await db.Data.updateOne(cond,{$push:{hoursSlept:{sleep:number,day:`${formatted}`}}})
     console.log(result)
     return result
 }
 const pushObjDataStepsWalked = async (number,cond)=>{
-    const result =await db.Data.updateOne(cond,{$push:{stepsWalked:{steps:number,day:Date()}}})
+    const result =await db.Data.updateOne(cond,{$push:{stepsWalked:{steps:number,day:`${formatted}`}}})
+    console.log(result)
+    return result
+}
+const pushObjDataHydrationRate = async (number,cond)=>{
+    const result =await db.Data.updateOne(cond,{$push:{hydrationRate:{water:number,day:`${formatted}`}}})
     console.log(result)
     return result
 }
 const pushObjDataCaloriesBurnt = async (number,cond)=>{
-    const result =await db.Data.updateOne(cond,{$push:{caloriesBurnt:{calories:number,day:Date()}}})
+    const result =await db.Data.updateOne(cond,{$push:{caloriesBurnt:{calories:number,day:`${formatted}`}}})
     console.log(result)
     return result
 }
 const pushObjDataCaloriesIncome = async (number,cond)=>{
-    const result =await db.Data.updateOne(cond,{$push:{caloriesIncome:{calories:number,day:Date()}}})
+    const result =await db.Data.updateOne(cond,{$push:{caloriesIncome:{calories:number,day:`${formatted}`}}})
     console.log(result)
     return result
 }
@@ -85,3 +109,4 @@ module.exports.pushObjDataStepsWalked=pushObjDataStepsWalked
 module.exports.pushObjDataCaloriesBurnt=pushObjDataCaloriesBurnt
 module.exports.pushObjDataCaloriesIncome=pushObjDataCaloriesIncome
 module.exports.createUserData=createUserData
+module.exports.pushObjDataHydrationRate=pushObjDataHydrationRate

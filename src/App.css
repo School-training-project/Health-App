@@ -1,6 +1,8 @@
 :root {
     --dark : #282c34;
     --white: #dcfcf5;
+    --blackquiz:rgba(255, 255, 255, 0.473);
+    --whitequiz:rgba(0, 0, 0, 0.205);
     --dark-div:#FFD36E;
     --light-div:#5584AC;
     --sun:url('./components/DarkMode/sun.svg');
@@ -16,6 +18,7 @@
 }
 
 body.light{
+    --blackquiz:var(--blackquiz);
     --background-color: var(--white);
     --text-color: var(--dark);
     --font-weight:400;
@@ -29,6 +32,7 @@ body.light{
 
 
 body.dark{
+    --blackquiz:var(--whitequiz);
     --background-color: var(--dark);
     --text-color: var(--white);
     --font-weight:400;
