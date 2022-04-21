@@ -4,14 +4,23 @@ const router = express.Router()
 const db=require('../db/services/services')
 
 
-
 router.get('/',async(req,res)=>{
     const result=await db.getUserData({email:'root.root@root.root'})
     res.json(result).status(200)
 })
-router.put("/",async(req,res)=>{
+router.post("/:email",async(req,res)=>{
+    const email = req.params.email
+    const caloriesIncome= req.body.income
+    const caloriesBurned=req.body.burnned
+    const hoursSlept= req.body.slept
+    const stepsWalked =req.body.walked
+    const hydrationRate=req.body.rate
     try{
-        
+        await db.pushObjDataCaloriesBurnt(parseInt(caloriesBurned),{email:email})
+        await db.pushObjDataCaloriesIncome(parseInt(caloriesIncome),{email:email})
+        await db.pushObjDataHoursSlept(parseInt(hoursSlept),{email:email})
+        await db.pushObjDataStepsWalked(parseInt(stepsWalked),{email:email})
+        await db.pushObjDataHydrationRate(parseInt(hydrationRate),{email:email})
         res.send("Sucess in Updating").status(200)
         
     }catch(err){
