@@ -108,7 +108,6 @@ const Progress = () => {
     const fortmatResponse = (res) => {
         return JSON.stringify(res, null, 2);
     }
-    console.log(baseUrl)
     async function postData() {
         const postData = {
             income: income.current.value,

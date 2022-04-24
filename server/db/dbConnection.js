@@ -10,20 +10,26 @@ mongoose
 const credentialsSchema = new mongoose.Schema({
     _id: { type: String, default: uuid.v1 },
     name: {
-        firstName: { type: String },
-        lastName: { type: String },
+        type: String,
+        required: true
     },
-    email: String,
-    password: String,
+    email: {
+        type: String,
+        required: true
+    },
+    password: {
+        type: String,
+        required: true
+    },
 });
 
 const userDataSchema = new mongoose.Schema({
     email: String,
-    caloriesBurnt: { type : Array , "default" : [] },
-    stepsWalked: { type : Array , "default" : [] },
-    caloriesIncome: { type : Array , "default" : [] },
-    hoursSlept:{ type : Array , "default" : [] },
-    hydrationRate:{type: Array, default: []},
+    caloriesBurnt: { type: Array, "default": [] },
+    stepsWalked: { type: Array, "default": [] },
+    caloriesIncome: { type: Array, "default": [] },
+    hoursSlept: { type: Array, "default": [] },
+    hydrationRate: { type: Array, "default": [] },
 });
 const Credential = mongoose.model("Credential", credentialsSchema);
 const Data = mongoose.model("Data", userDataSchema);

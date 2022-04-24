@@ -1,8 +1,9 @@
 import React from "react";
 import "./App.css";
+import {useState} from 'react';
 import Navbar from "./components/Navbar";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-import test from "./pages/index.js";
+import Test from "./pages/index.js";
 import map from "./pages/Map/map";
 import Progress from "./pages/progress.js";
 import quiz from "./pages/quiz";
@@ -13,24 +14,27 @@ import DarkMode from "./components/DarkMode/DarkMode";
 import 'mapbox-gl/dist/mapbox-gl.css';
 
 function App() {
+  const [user,setLoginUser] = useState({})
   return (
     <Router>
       <Switch>
         <Route path="/signin" component={Signout} />
-        <div>
-          <div className="nav">
-            <Navbar />
-          </div>
-          <div className="notnav">
-            <DarkMode />
-            <Route exact path="/" component={test} />
-            <Route path="/home" component={home} />
-            <Route path="/progress" component={Progress} />
-            <Route path="/quiz" component={quiz} />
-            <Route path="/blog" component={blog} />
-            <Route path="/map" exact component={map} />
-          </div>
-        </div>
+        <div className="nav">
+                  <Navbar />
+                </div>
+                <div className="notnav">
+                  <DarkMode /> 
+                  <Route exact path="/test" component={Test} />
+                  <Route path="/home" component={home} />
+                  <Route path="/progress" component={Progress} />
+                  <Route path="/quiz" component={quiz} />
+                  <Route path="/blog" component={blog} />
+                  <Route path="/map" exact component={map} />
+                </div>
+            
+            <Route path="/Register"><Signout /></Route>
+            <Route path="/Login"><Signout setLoginUser={setLoginUser} /></Route>
+        
       </Switch>
     </Router>
   );

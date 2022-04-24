@@ -14,7 +14,7 @@ const Navbar = () => {
     return (
         <div className='nav'>
             <Nav>
-                <NavLogo to="/" >
+                <NavLogo to="/test" >
                    
                     HEALTH APP
                 </NavLogo>
