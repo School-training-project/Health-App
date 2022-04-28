@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { BarChart } from "../components/Charts/Barchart";
 import { UserData } from "../components/Charts/Data";
 import { LineChart } from "../components/Charts/LineChart";
-import { PieChart } from "../components/Charts/PieChart";
+//import { PieChart } from "../components/Charts/PieChart";
 import Carousel from "react-elastic-carousel"
 import Item from "../components/Item/Item";
 const Progress = () => {
@@ -28,35 +28,30 @@ const Progress = () => {
                             width: '100%',  }}>
                 <Item>
                     <div style={{
-                        width:"70%",
-                        height:"70%",
+                        width:"80%",
+                        height:"80%",
                         maxWidth: "100%",
                         maxHeight: "100%",
                         marginLeft:"150px"
                 }}>
-                        <LineChart DataPassed={userData}/>
+                        <LineChart DataPassed={userData}
+                        options={{
+                        
+                            colors: ["red"]
+                            
+                          }}
+                          />
                     </div>
                 </Item>
                 <Item>
                     <div style={{
-                        width:"70%",
-                        height:"70%",
+                        width:"80%",
+                        height:"80%",
                         maxWidth: "100%",
                         maxHeight: "100%",
                         marginLeft:"150px"
                 }}> 
                             <BarChart DataPassed={userData}/>
-                    </div>
-                </Item>
-                <Item>
-                    <div style={{
-                        width:"30%",
-                        height:"30%",
-                        maxWidth: "100%",
-                        maxHeight: "100%",
-                        marginLeft:"350px"
-                }}>
-                            <PieChart DataPassed={userData}/>
                     </div>
                 </Item>
                 <Item>

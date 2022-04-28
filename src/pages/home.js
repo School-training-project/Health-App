@@ -1,5 +1,6 @@
 import React from "react";
 import '../components/Homestyle/homestyle.css'
+//import { motion } from "framer-motion"
 
 const Home = () => {
     const dotw = ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"]

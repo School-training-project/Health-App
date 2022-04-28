@@ -12,10 +12,14 @@ export const blog=(props)=>{
                 justifyContent: 'center',
                 alignItems: 'center',
                 height: '100vh',
+                overflowY:'auto',
+                paddingBottom:"80px",
+                width:"87%"
+
                 
                 
         }}>
-            
+            <div className="blurrer"></div>
             <ContextProvider >
                 <Articles/>
             </ContextProvider>

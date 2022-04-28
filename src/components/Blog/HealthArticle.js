@@ -7,11 +7,11 @@ function HealthArticle({ data }) {
       <h3 className="news__title">{data.title}</h3>
       <p className="news__desc">{data.description}</p>
        <br />
-      <img className="news__img" src={data.urlToImage}></img> <br />
+      <img className="news__img" src={data.urlToImage} alt ="Image currently unavailable"></img> <br />
       <span className="news__source">Source : {data.source.name}</span><br />
       <span className="news__published">Published : {data.publishedAt}</span><br />
-      <a  href={data.url}>
-            <button className="news__button">View More</button>
+      <a  href={data.url} className="news__button">
+          View More
       </a>
     </div>
   );

@@ -16,6 +16,7 @@
     "chart.js": "^3.7.1",
     "components": "^0.1.0",
     "d3-scale": "^2.0.0",
+    "framer-motion": "^6.3.2",
     "mongoose": "^6.2.10",
     "node-uuid": "^1.4.8",
     "react": "^17.0.2",
