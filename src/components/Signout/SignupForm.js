@@ -1,76 +1,71 @@
-import React, { Component } from "react";
+import React, { Component, useState } from "react";
 import { Link } from "react-router-dom";
 import './signform.css';
-class Signup extends Component {
-    constructor() {
-        super();
-        this.state = {
-            name: "",
-            email: "",
-            password: "",
-            password2: "",
-            errors: {}
-        };
-    }
-    onChange = e => {
-        this.setState({ [e.target.id]: e.target.value });
+const Signup = () => {
+    const [state, setState] = useState({
+        name: "",
+        email: "",
+        password: "",
+        password2: "",
+    })
+    
+    const mapStateToProps = state => ({
+        auth: state.auth,
+        errors: state.errors
+    });
+    const onChange = e => {
+        setState({ ...state, [e.target.id]: e.target.value });
     };
-    onSubmit = e => {
+    const onSubmit = e => {
         e.preventDefault();
-        const newUser = {
-            name: this.state.name,
-            email: this.state.email,
-            password: this.state.password,
-            password2: this.state.password2
-        };
-        console.log(newUser);
+        console.log(state)
     };
-    render() {
-        return (
-            <form noValidate onSubmit={this.onSubmit}>
 
-                <div className="form-group" >
+    return (
+        <form noValidate onSubmit={onSubmit}>
 
-                    <input type="text"
-                        onChange={this.onChange}
-                        value={this.state.name}
-                        // error={errors.name}
-                        className="form-control"
-                        placeholder="Enter Name"
-                    />
-                    <br />
+            <div className="form-group" >
 
-                    <input type="text"
-                        className="form-control"
-                        onChange={this.onChange}
-                        value={this.state.email}
-                        // error={errors.email}
-                        placeholder="Enter Email"
-                    />
+                <input type="text"
+                    onChange={onChange}
+                    id="name"
+                    className="form-control"
+                    placeholder="Enter Name"
+                />
+                <br />
 
-                    <br />
+                <input type="text"
+                    id="email"
+                    className="form-control"
+                    onChange={onChange}
+                    placeholder="Enter Email"
+                />
 
-                    <input type="password"
-                        className="form-control"
-                        onChange={this.onChange}
-                        value={this.state.password}
-                        // error={errors.password}
-                        placeholder="Enter password" />
+                <br />
 
-                    <br />
+                <input type="password"
+                    id="password"
+                    className="form-control"
+                    onChange={onChange}
+                    placeholder="Enter password" />
 
-                    <input type="password"
-                        className="form-control"
-                        onChange={this.onChange}
-                        value={this.state.password2}
-                        // error={errors.password2}
-                        placeholder="Confirm password" />
-                    <br />
+                <br />
 
-                    <button type="submit" className="signbutton">SIGN UP</button>
-                </div>
-            </form >
-        )
-    }
+                <input type="password"
+                    id="password2"
+                    className="form-control"
+                    onChange={onChange}
+                    placeholder="Confirm password" />
+                <br />
+
+                <button type="submit" className="signbutton">SIGN UP</button>
+            </div>
+        </form >
+    )
 }
-export default Signup;
+
+
+export default connect(
+    mapStateToProps,
+    { registerUser }
+)(withRouter(Signup));
