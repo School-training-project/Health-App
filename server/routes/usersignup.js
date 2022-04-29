@@ -11,7 +11,7 @@ const validateRegisterInput = require("../validation/register");
 router.post("/", async (req, res) => {
     const { errors, isValid } = validateRegisterInput(req.body);
     if (!isValid) {
-        return res.status(400).json(errors);
+        return res.status(405).json(errors);
     }
     const { name, email, password } = req.body;
     const userr = await db.findUser({ email: email })

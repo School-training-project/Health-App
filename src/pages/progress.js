@@ -84,7 +84,7 @@ const Progress = () => {
                 setLoading(true)
                 const response = await fetch(url)
                 const json = await response.json()
-                setEmail(json[0].email)
+                setEmail(json[0].email)  // replace email with logged in email and should be done 
                 setStepsData(json[0].stepsWalked)
                 setCaloriesData(json[0].caloriesBurnt)
                 setHoursSleptData(json[0].hoursSlept)

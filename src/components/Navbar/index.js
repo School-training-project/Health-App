@@ -8,9 +8,19 @@ import {
     NavBtn,
     NavBtnLink,
 } from "./NavbarElements";
+import { logoutUser } from '../../actions/authActions';
+import { connect } from "react-redux";
+import { Link, withRouter, useHistory } from "react-router-dom";
+
+
 
 const Navbar = () => {
-
+    const history=useHistory()
+    function onLogout(e) {
+        localStorage.clear()
+        history.push("/")
+        
+    }
     return (
         <div className='nav'>
             <Nav>
@@ -46,11 +56,18 @@ const Navbar = () => {
                         Map
                     </NavLink>
                     <NavBtn>
-                        <NavBtnLink to="/signIn">Sign out</NavBtnLink>
+                        <NavBtnLink  to="/" onClick={onLogout}>Sign out</NavBtnLink>
                     </NavBtn>
                 </NavMenu>
             </Nav>
         </div>
     );
 };
-export default Navbar;
+const mapStateToProps = state => ({
+    auth: state.auth,
+    errors: state.errors
+});
+export default withRouter(connect(
+    mapStateToProps,
+    { logoutUser }
+)(Navbar))

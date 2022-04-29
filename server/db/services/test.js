@@ -2,15 +2,13 @@ const services = require('./services')
 
 // services.getUser()
 // services.getUserData()
-// services.createUser({
-//     name:{
-//         firstName:"Root",
-//         lastName:'Root'
-//     },
-//     email:"rootroot@root.root",
-//     password:"root"
-// })
-
+const test=async()=>{await services.createUser({
+    name:"hahaha",
+    email:"rootroooot@root.root",
+    password:"root"
+})
+}
+console.log(test)
 //     
 //     // caloriesBurnt:[{
 //     //     calories:1500,
@@ -30,9 +28,9 @@ const services = require('./services')
 //     // },],
 //     // hydrationRate:4,
 
-services.createUserData({
-    email:"root.root@root.root",
-})
+// services.createUserData({
+//     email:"root.root@root.root",
+// })
 
 // services.removeUserData({email: 'root.root@root.root'})
 // services.updateUserData({email:'root.root@root.root'},{email:'testetset@test.test'})

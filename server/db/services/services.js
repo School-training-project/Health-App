@@ -28,6 +28,7 @@ const createUser = async (obj) => {
         password: obj.password
     })
     await credential.save()
+    return credential
 }
 
 
@@ -49,58 +50,57 @@ const findUser = async (obj) => {
 
 const getUserData = async (obj = {}) => {
     const data = await db.Data.find(obj)
-    console.log(data)
     return data
 }
 
 const getUser = async (obj = {}) => {
     const users = await db.Credential.find(obj);
-    console.log(users);
+    return users
 };
 
 const updateUser = async (obj = {}, cond) => {
     const result = await db.Credential.updateOne(cond, { $set: obj })
-    console.log(result)
+    return result
 }
 
 const updateUserData = async (obj = {}, cond) => {
     const result = await db.Data.updateOne(cond, { $set: obj })
-    console.log(result)
+    return result
 }
 const pushObjDataHoursSlept = async (number, cond) => {
     const result = await db.Data.updateOne({ filter: cond }, { $push: { hoursSlept: { sleep: number, day: `${formatted}` } } })
-    console.log(result)
+
     return result
 }
 const pushObjDataStepsWalked = async (number, cond) => {
     const result = await db.Data.updateOne({ filter: cond }, { $push: { stepsWalked: { steps: number, day: `${formatted}` } } })
-    console.log(result)
+
     return result
 }
 const pushObjDataHydrationRate = async (number, cond) => {
     const result = await db.Data.updateOne({ filter: cond }, { $push: { hydrationRate: { water: number, day: `${formatted}` } } })
-    console.log(result)
+
     return result
 }
 const pushObjDataCaloriesBurnt = async (number, cond) => {
     const result = await db.Data.updateOne({ filter: cond }, { $push: { caloriesBurnt: { calories: number, day: `${formatted}` } } })
     // await db.save()
-    console.log(result)
+
     return result
 }
 const pushObjDataCaloriesIncome = async (number, cond) => {
     const result = await db.Data.updateOne({ filter: cond }, { $push: { caloriesIncome: { calories: number, day: `${formatted}` } } })
-    console.log(result)
+
     return result
 }
 
 const removeUser = async (obj) => {
     const result = await db.Credential.deleteOne(obj)
-    console.log(result)
+    return result
 }
 const removeUserData = async (obj) => {
     const result = await db.Data.deleteOne(obj)
-    console.log(result)
+    return result
 }
 
 

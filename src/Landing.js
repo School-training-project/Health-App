@@ -24,12 +24,13 @@ function Landing() {
                     </div>
                     <div className="notnav">
                         <DarkMode />
-                        <Route exact path="/" component={Test} />
+                        <Route exact path="/test" component={Test} />
                         <Route path="/home" component={home} />
                         <Route path="/progress" component={Progress} />
                         <Route path="/quiz" component={quiz} />
                         <Route path="/blog" component={blog} />
                         <Route path="/map" exact component={map} />
+                        <Route path="/" exact component={Signout}/>
                     </div>
                 </div>
             </Switch>
