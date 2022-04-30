@@ -17,6 +17,8 @@
 .env.test.local
 .env.production.local
 .history
+.history/src
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+.gitignore

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Component } from 'react';
 import {
     Nav,
     NavLogo,
@@ -8,49 +8,73 @@ import {
     NavBtn,
     NavBtnLink,
 } from "./NavbarElements";
+import {  withRouter } from "react-router-dom";
+import { logoutUser } from '../../actions/authActions';
+import PropTypes from "prop-types";
+import { connect } from "react-redux";
 
-const Navbar = () => {
 
-    return (
-        <div className='nav'>
-            <Nav>
-                <NavLogo to="/" >
-                   
-                    HEALTH APP
-                </NavLogo>
-                <Bars />
-                <NavMenu>
-                    <NavLink
-                        to="/home"
-                    >
-                        Home
-                    </NavLink>
-                    <NavLink
-                        strict to="/progress"
-                    >
-                        Progress
-                    </NavLink>
-                    <NavLink
-                        to="/quiz"
-                    >
-                        Quiz
-                    </NavLink>
-                    <NavLink
-                        to="/blog"
-                    >
-                        Blog
-                    </NavLink>
-                    <NavLink
-                        to="/map"
-                    >
-                        Map
-                    </NavLink>
-                    <NavBtn>
-                        <NavBtnLink to="/signIn">Sign out</NavBtnLink>
-                    </NavBtn>
-                </NavMenu>
-            </Nav>
-        </div>
-    );
+
+
+class Navbar extends Component {
+    onLogoutClick = e => {
+        e.preventDefault();
+        this.props.logoutUser();
+        
+    };
+    render() {
+        const { user } = this.props.auth;
+        return (
+            <div className='nav'>
+                <Nav>
+                    <NavLogo to="/test" >
+
+                        HEALTH APP
+                    </NavLogo>
+                    <Bars />
+                    <NavMenu>
+                        <NavLink
+                            to="/home"
+                        >
+                            Home
+                        </NavLink>
+                        <NavLink
+                            strict to="/progress"
+                        >
+                            Progress
+                        </NavLink>
+                        <NavLink
+                            to="/quiz"
+                        >
+                            Quiz
+                        </NavLink>
+                        <NavLink
+                            to="/blog"
+                        >
+                            Blog
+                        </NavLink>
+                        <NavLink
+                            to="/map"
+                        >
+                            Map
+                        </NavLink>
+                        <NavBtn>
+                            <NavBtnLink onClick={this.onLogoutClick} to='/k' >Sign out</NavBtnLink>
+                        </NavBtn>
+                    </NavMenu>
+                </Nav>
+            </div>
+        );
+    };
+}
+Navbar.propTypes = {
+    logoutUser: PropTypes.func.isRequired,
+    auth: PropTypes.object.isRequired
 };
-export default Navbar;
+const mapStateToProps = state => ({
+    auth: state.auth
+});
+export default withRouter(connect(
+    mapStateToProps,
+    { logoutUser }
+)(Navbar))

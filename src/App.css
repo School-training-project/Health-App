@@ -1,7 +1,13 @@
 :root {
     --font:'Roboto', sans-serif;
     --dark : #282c34;
+<<<<<<< HEAD
+    --white: #dcfcf5;
+    --blackquiz:rgba(255, 255, 255, 0.473);
+    --whitequiz:rgba(0, 0, 0, 0.205);
+=======
     --white: #FFF;
+>>>>>>> main
     --dark-div:#FFD36E;
     --yellowish:#FAFAF5;
     --blurple:#5865F2;
@@ -20,6 +26,7 @@
 }
 
 body.light{
+    --blackquiz:var(--blackquiz);
     --background-color: var(--white);
     --text-color: var(--dark);
     --font-weight:400;
@@ -35,6 +42,7 @@ body.light{
 
 
 body.dark{
+    --blackquiz:var(--whitequiz);
     --background-color: var(--dark);
     --text-color: var(--white);
     --font-weight:400;
