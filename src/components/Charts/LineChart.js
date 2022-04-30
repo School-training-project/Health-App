@@ -4,6 +4,7 @@ import {Chart as ChartJS} from 'chart.js/auto'
 
 export const LineChart = ({DataPassed})=>{
     return <div>
-        <Line data={DataPassed}  />
+        <Line data={DataPassed} 
+         />
     </div>
 }

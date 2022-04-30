@@ -1,9 +1,16 @@
 :root {
+    --font:'Roboto', sans-serif;
     --dark : #282c34;
+<<<<<<< HEAD
     --white: #dcfcf5;
     --blackquiz:rgba(255, 255, 255, 0.473);
     --whitequiz:rgba(0, 0, 0, 0.205);
+=======
+    --white: #FFF;
+>>>>>>> main
     --dark-div:#FFD36E;
+    --yellowish:#FAFAF5;
+    --blurple:#5865F2;
     --light-div:#5584AC;
     --sun:url('./components/DarkMode/sun.svg');
     --moon:url('./components/DarkMode/moon.svg');
@@ -11,6 +18,7 @@
     --text-dark:#2e5951;
     --dark-question:#b6e7de;
     --light-question:#64bdd888;
+    --greenbar:#42CD8C;
     --linear-lightbackground:linear-gradient(90deg, rgba(109,210,180,1) 12%, rgba(29,66,168,1) 79%);
     --linear-darkbackground:linear-gradient(270deg, rgba(109,210,180,1) 12%, rgba(29,66,168,1) 79%);
     --light-map:url(mapbox://styles/mapbox/streets-v11);
@@ -27,7 +35,9 @@ body.light{
     --text-div:var(--text-dark);
     --back-question:var(--light-question);
     --linear-background:var(--linear-darkbackground);
-    --map-theme:var(--light-map)
+    --map-theme:var(--light-map);
+    --Boxbg:var(--yellowish);
+    --info:var(--greenbar)
 }
 
 
@@ -41,6 +51,8 @@ body.dark{
     --text-div:var(--text-light);
     --back-question: var(--dark-question);
     --linear-background:var(--linear-lightbackground);
+    --Boxbg:var(--greenbar);
+    --info:var(--yellowish)
 }
 
 
@@ -49,6 +61,7 @@ body{
     background: var(--background-color);
     color: var(--text-color);
     font-weight: var(--font-weight);
-    transition: background .3s ease-in-out, color .6s ease-in-out;
+    transition: background .3s ease-in-out, color .3s ease-in-out;
+    
 }
 
