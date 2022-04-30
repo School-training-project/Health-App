@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from "react";
 import { BarChart } from "../components/Charts/Barchart";
 import { LineChart } from "../components/Charts/LineChart";
-//import { PieChart } from "../components/Charts/PieChart";
+import { PieChart } from "../components/Charts/PieChart";
 import Carousel from "react-elastic-carousel"
 import Item from "../components/Item/Item";
 
@@ -145,7 +145,6 @@ const Progress = () => {
     const clearPostOutput = () => {
         setPostResult(null);
     }
-    console.log(postResult)
     if (loading) {
         return <p>Data is loading...</p>;
     }
