@@ -9,32 +9,32 @@ import { Signout } from "./pages/signout";
 import { blog } from "./pages/blog";
 import DarkMode from "./components/DarkMode/DarkMode";
 import 'mapbox-gl/dist/mapbox-gl.css';
-import React from 'react';
+import React, { Component } from 'react';
 
-
-
-function Landing() {
-    return (
-        <Router>
-            <Switch>
-                <Route path="/signin" component={Signout} />
-                <div>
-                    <div className="nav">
-                        <Navbar />
+class Landing extends Component {
+    render() {
+        return (
+            <Router>
+                <Switch>
+                    <Route path="/signin" component={Signout} />
+                    <div>
+                        <div className="nav">
+                            <Navbar />
+                        </div>
+                        <div className="notnav">
+                            <DarkMode />
+                            <Route exact path="/test" component={Test} />
+                            <Route path="/home" component={home} />
+                            <Route path="/progress" component={Progress} />
+                            <Route path="/quiz" component={quiz} />
+                            <Route path="/blog" component={blog} />
+                            <Route path="/map" exact component={map} />
+                            <Route  path="/k" exact component={Signout} />
+                        </div>
                     </div>
-                    <div className="notnav">
-                        <DarkMode />
-                        <Route exact path="/test" component={Test} />
-                        <Route path="/home" component={home} />
-                        <Route path="/progress" component={Progress} />
-                        <Route path="/quiz" component={quiz} />
-                        <Route path="/blog" component={blog} />
-                        <Route path="/map" exact component={map} />
-                        <Route path="/" exact component={Signout}/>
-                    </div>
-                </div>
-            </Switch>
-        </Router>
-    )
+                </Switch>
+            </Router>
+        )
+    }
 }
-export default Landing;
+export default Landing

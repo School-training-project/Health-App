@@ -1,6 +1,5 @@
 import React, { useState, useEffect, useRef } from "react";
 import { BarChart } from "../components/Charts/Barchart";
-import { UserData } from "../components/Charts/Data";
 import { LineChart } from "../components/Charts/LineChart";
 import { PieChart } from "../components/Charts/PieChart";
 import Carousel from "react-elastic-carousel"
@@ -8,7 +7,6 @@ import Item from "../components/Item/Item";
 
 const Progress = () => {
     const [stepsData, setStepsData] = useState([])
-    const [email, setEmail] = useState([])
     const [caloriesBurnedData, setCaloriesData] = useState([])
     const [hoursSleptData, setHoursSleptData] = useState([])
     const [caloriesIncomeData, setIncomeData] = useState([])
@@ -77,14 +75,15 @@ const Progress = () => {
             }
         }
     }
+    const email= localStorage.getItem('email')
+
     useEffect(() => {
-        const url = "http://localhost:3001/userdata"
+        const url = "http://localhost:3001/userdata/"+email
         const fetchData = async () => {
             try {
                 setLoading(true)
                 const response = await fetch(url)
                 const json = await response.json()
-                setEmail(json[0].email)  // replace email with logged in email and should be done 
                 setStepsData(json[0].stepsWalked)
                 setCaloriesData(json[0].caloriesBurnt)
                 setHoursSleptData(json[0].hoursSlept)

@@ -4,8 +4,9 @@ const router = express.Router()
 const db=require('../db/services/services')
 
 
-router.get('/',async(req,res)=>{
-    const result=await db.getUserData({email:'root.root@root.root'})
+router.get('/:email',async(req,res)=>{
+    const email=req.params.email
+    const result=await db.getUserData({email:email})
     res.json(result).status(200)
 })
 router.post("/:email",async(req,res)=>{
