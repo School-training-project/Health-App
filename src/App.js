@@ -1,18 +1,16 @@
 import React from "react";
 import "./App.css";
 import Navbar from "./components/Navbar";
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-import test from "./pages/index.js";
-import map from "./pages/Map/map";
-import Progress from "./pages/progress.js";
-import quiz from "./pages/quiz";
-import home from "./pages/home";
+import AnimatedRoutes from "./AnimatedRoutes";
+import { BrowserRouter as Router, Switch, Route,  useLocation } from "react-router-dom";
+
 import { Signout } from "./pages/signout";
-import { blog } from "./pages/blog";
+
 import DarkMode from "./components/DarkMode/DarkMode";
 import 'mapbox-gl/dist/mapbox-gl.css';
 
 function App() {
+  const location = useLocation();
   return (
     <Router>
       <Switch>
@@ -21,14 +19,11 @@ function App() {
           <div className="nav">
             <Navbar />
           </div>
+
           <div className="notnav">
+
             <DarkMode />
-            <Route exact path="/" component={test} />
-            <Route path="/home" component={home} />
-            <Route path="/progress" component={Progress} />
-            <Route path="/quiz" component={quiz} />
-            <Route path="/blog" component={blog} />
-            <Route path="/map" exact component={map} />
+            <AnimatedRoutes/>
           </div>
         </div>
       </Switch>
