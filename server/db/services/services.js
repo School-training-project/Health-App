@@ -68,28 +68,28 @@ const updateUserData = async (obj = {}, cond) => {
     return result
 }
 const pushObjDataHoursSlept = async (number, cond) => {
-    const result = await db.Data.updateOne({ filter: cond }, { $push: { hoursSlept: { sleep: number, day: `${formatted}` } } })
+    const result = await db.Data.updateOne( cond , { $push: { hoursSlept: { sleep: number, day: `${formatted}` } } })
 
     return result
 }
 const pushObjDataStepsWalked = async (number, cond) => {
-    const result = await db.Data.updateOne({ filter: cond }, { $push: { stepsWalked: { steps: number, day: `${formatted}` } } })
+    const result = await db.Data.updateOne( cond , { $push: { stepsWalked: { steps: number, day: `${formatted}` } } })
 
     return result
 }
 const pushObjDataHydrationRate = async (number, cond) => {
-    const result = await db.Data.updateOne({ filter: cond }, { $push: { hydrationRate: { water: number, day: `${formatted}` } } })
+    const result = await db.Data.updateOne(cond , { $push: { hydrationRate: { water: number, day: `${formatted}` } } })
 
     return result
 }
 const pushObjDataCaloriesBurnt = async (number, cond) => {
-    const result = await db.Data.updateOne({ filter: cond }, { $push: { caloriesBurnt: { calories: number, day: `${formatted}` } } })
+    const result = await db.Data.updateOne( cond , { $push: { caloriesBurnt: { calories: number, day: `${formatted}` } } })
     // await db.save()
 
     return result
 }
 const pushObjDataCaloriesIncome = async (number, cond) => {
-    const result = await db.Data.updateOne({ filter: cond }, { $push: { caloriesIncome: { calories: number, day: `${formatted}` } } })
+    const result = await db.Data.updateOne( cond , { $push: { caloriesIncome: { calories: number, day: `${formatted}` } } })
 
     return result
 }
