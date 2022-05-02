@@ -11,8 +11,9 @@ const Home = () => {
     const [caloriesBurntdb,setcaloriesBurnt]=useState()
     const [stepsWalkeddb,setSteps]=useState()
     const [caloriesIncome,setCaloriesIncome]=useState()
+    const email= localStorage.getItem('email')
     useEffect(()=>{
-        const url ="http://localhost:3001/userdata"
+        const url ="http://localhost:3001/userdata/"+email
         const fetchData= async ()=>{
             try{
                 const response = await fetch(url)

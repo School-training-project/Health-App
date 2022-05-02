@@ -97,6 +97,9 @@ const Progress = () => {
         }
         fetchData()
     }, [])
+    const onSubmit = e => {
+        e.preventDefault();
+    }
     const baseUrl = "http://localhost:3001/userdata/"+email
     const income = useRef(null)
     const burnned = useRef(null);
@@ -224,7 +227,7 @@ const Progress = () => {
                             padding: "auto",
                             fontSize: "20px",
                         }}>
-                            <form>
+                            <form onSubmit={onSubmit}>
                                 <label for="income">Calories Income:
                                 <input type="text" id="CaloriesIncome" ref={income} name="income"/><br/>
                                 </label>

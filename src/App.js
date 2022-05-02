@@ -37,6 +37,7 @@ function App() {
           </div>
           <Switch>
               <PrivateRoute exact path="/test" component={Landing} />
+              <Route  path="/" exact component={Signout} />
             </Switch>
       </Router>
     </Provider>

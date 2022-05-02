@@ -18,9 +18,8 @@ import { connect } from "react-redux";
 
 class Navbar extends Component {
     onLogoutClick = e => {
-        e.preventDefault();
         this.props.logoutUser();
-        
+        this.props.history.push("/")
     };
     render() {
         const { user } = this.props.auth;
@@ -59,7 +58,7 @@ class Navbar extends Component {
                             Map
                         </NavLink>
                         <NavBtn>
-                            <NavBtnLink onClick={this.onLogoutClick} to='/k' >Sign out</NavBtnLink>
+                            <NavBtnLink onClick={this.onLogoutClick} to='/' >Sign out</NavBtnLink>
                         </NavBtn>
                     </NavMenu>
                 </Nav>

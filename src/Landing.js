@@ -29,7 +29,6 @@ class Landing extends Component {
                             <Route path="/quiz" component={quiz} />
                             <Route path="/blog" component={blog} />
                             <Route path="/map" exact component={map} />
-                            <Route  path="/k" exact component={Signout} />
                         </div>
                     </div>
                 </Switch>
