@@ -19,7 +19,7 @@ import { connect } from "react-redux";
 class Navbar extends Component {
     onLogoutClick = e => {
         this.props.logoutUser();
-        this.props.history.push("/")
+        window.location.pathname = "/";
     };
     render() {
         const { user } = this.props.auth;

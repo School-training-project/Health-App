@@ -1,6 +1,6 @@
 import "mapbox-gl/dist/mapbox-gl.css";
 import "react-map-gl-geocoder/dist/mapbox-gl-geocoder.css";
-import React, { useState, useRef, useCallback } from "react";
+import React, { useState, useRef,useEffect, useCallback } from "react";
 import Map ,{GeolocateControl}from "react-map-gl";
 import Geocoder from "react-map-gl-geocoder";
 
@@ -22,6 +22,20 @@ function Map1() {
   const geocoderContainerRef = useRef();
   const mapRef = useRef();
   const [mapstyle,setmap]=useState("mapbox://styles/superh257/cl1ia13ee008715qs6lflsbmm")
+  useEffect(() => {
+    const mapdark="mapbox://styles/superh257/cl1ia13ee008715qs6lflsbmm"
+    const maplight="mapbox://styles/mapbox/streets-v9"
+    const theme= localStorage.getItem("theme")
+    return () => {
+      if (theme=="dark"){
+        setmap(mapdark)
+      }
+      else{
+        setmap(maplight)
+      }
+    }
+  }, [])
+  
   const handleViewportChange = useCallback(
     (newViewport) => setViewport(newViewport),
     []
@@ -109,10 +123,9 @@ function Map1() {
         {...viewport}
         width="100%"
         height="100%"
-        mapStyle="mapbox://styles/mapbox/streets-v9"
+        mapStyle={mapstyle}
         style={{borderTopRightRadius:'50px',
                 borderTopLeftRadius:'50px',
-                marginTop:'50px'
                 }}
         onViewportChange={handleViewportChange}
         mapboxApiAccessToken={MAPBOX_TOKEN}
@@ -123,10 +136,11 @@ function Map1() {
           containerRef={geocoderContainerRef}
           onViewportChange={handleGeocoderViewportChange}
           mapboxApiAccessToken={MAPBOX_TOKEN}
-          position="top-left"
+          position="topleft"
           
         />
-        <GeolocateControl ref={geolocateControlRef} />
+        {/* <GeolocateControl ref={geolocateControlRef} 
+        position="topright"/> */}
       </Map>
     </div>
     </div>

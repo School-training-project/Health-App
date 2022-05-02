@@ -75,10 +75,10 @@ const Progress = () => {
             }
         }
     }
-    const email= localStorage.getItem('email')
+    const email = localStorage.getItem('email')
 
     useEffect(() => {
-        const url = "http://localhost:3001/userdata/"+email
+        const url = "http://localhost:3001/userdata/" + email
         const fetchData = async () => {
             try {
                 setLoading(true)
@@ -97,15 +97,12 @@ const Progress = () => {
         }
         fetchData()
     }, [])
-    const onSubmit = e => {
-        e.preventDefault();
-    }
-    const baseUrl = "http://localhost:3001/userdata/"+email
+    const baseUrl = "http://localhost:3001/userdata/" + email
     const income = useRef(null)
     const burnned = useRef(null);
-    const slept=useRef(null)
-    const walked=useRef(null)
-    const rate=useRef(null)
+    const slept = useRef(null)
+    const walked = useRef(null)
+    const rate = useRef(null)
     const [postResult, setPostResult] = useState(null);
     const fortmatResponse = (res) => {
         return JSON.stringify(res, null, 2);
@@ -141,6 +138,7 @@ const Progress = () => {
                 data: data,
             };
             setPostResult(fortmatResponse(result));
+            window.location.href = "./test";
         } catch (err) {
             setPostResult(err.message);
         }
@@ -148,6 +146,10 @@ const Progress = () => {
     const clearPostOutput = () => {
         setPostResult(null);
     }
+    const onSubmit = (e) => {
+        e.preventDefault();
+        window.location.href = "./progress";
+    };
     if (loading) {
         return <p>Data is loading...</p>;
     }
@@ -227,25 +229,25 @@ const Progress = () => {
                             padding: "auto",
                             fontSize: "20px",
                         }}>
-                            <form onSubmit={onSubmit}>
+                            <form onSubmit={onSubmit} >
                                 <label for="income">Calories Income:
-                                <input type="text" id="CaloriesIncome" ref={income} name="income"/><br/>
+                                    <input type="text" id="CaloriesIncome" ref={income} name="income" /><br />
                                 </label>
-                                <label for="burned">Calories Burnned:<br/>
-                                <input type="text" id="CaloriesBurnned" ref={burnned} name="burnned"/><br/>
+                                <label for="burned">Calories Burnned:<br />
+                                    <input type="text" id="CaloriesBurnned" ref={burnned} name="burnned" /><br />
                                 </label>
-                                <label for="slept">Hours Slept:<br/>
-                                <input type="text" id="HoursSlept" ref={slept} name="slept"/><br/>
+                                <label for="slept">Hours Slept:<br />
+                                    <input type="text" id="HoursSlept" ref={slept} name="slept" /><br />
                                 </label>
-                                <label for="walked">Steps Walked :<br/>
-                                <input type="text" id="StepsWalked" ref={walked} name="walked"/><br/>
+                                <label for="walked">Steps Walked :<br />
+                                    <input type="text" id="StepsWalked" ref={walked} name="walked" /><br />
                                 </label>
-                                <label for="rate">Hydration Rate:<br/>
-                                <input type="text" id="HydrationRate" ref={rate} name="rate"/><br/>
+                                <label for="rate">Hydration Rate:<br />
+                                    <input type="text" id="HydrationRate" ref={rate} name="rate" /><br />
                                 </label>
                                 <button onClick={postData} >Submit</button>
                                 <button className="btn btn-sm btn-warning ml-2" onClick={clearPostOutput}>Clear</button>
-                                { postResult && <div className="alert alert-secondary mt-2" role="alert"><pre>{postResult}</pre></div> }
+                                {postResult && <div className="alert alert-secondary mt-2" role="alert"><pre>{postResult}</pre></div>}
                             </form>
                         </div>
                     </Item>
