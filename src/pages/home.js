@@ -65,7 +65,8 @@ const Home = () => {
     calb= calbNum>idealcalb ? `+${idealcalb} kcal`:calb
 
     let caloriesConsumed=caloriesIncome //this will come from user input
-    let idealcalc=3500
+    let idealcalc=5500
+    
     let calcNum=(200*caloriesConsumed)/idealcalc //assuming 3500 for male
     let calc=calcNum.toString()+"px"
     calc= calcNum>idealcalc ? `+${idealcalc} kcal`:calc
