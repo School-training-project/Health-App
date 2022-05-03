@@ -4,6 +4,7 @@ import { LineChart } from "../components/Charts/LineChart";
 import { PieChart } from "../components/Charts/PieChart";
 import Carousel from "react-elastic-carousel"
 import Item from "../components/Item/Item";
+import './progress.css';
 
 const Progress = () => {
     const [stepsData, setStepsData] = useState([])
@@ -163,6 +164,7 @@ const Progress = () => {
                 justifyContent: 'center',
                 alignItems: 'center',
                 height: '100%'
+                
             }}>
                 <Carousel style={{
                     height: '100%',
@@ -174,7 +176,7 @@ const Progress = () => {
                             height: "70%",
                             maxWidth: "100%",
                             maxHeight: "100%",
-                            marginLeft: "150px"
+                            marginLeft: "150px",
                         }}>
                             <LineChart DataPassed={stepswalkData} />
                         </div>
@@ -230,19 +232,22 @@ const Progress = () => {
                             fontSize: "20px",
                         }}>
                             <form onSubmit={onSubmit} >
-                                <label for="income">Calories Income:
-                                    <input type="text" id="CaloriesIncome" ref={income} name="income" /><br />
+                               
+                               <label for="income"><p id="calinc">Calories Income:</p>
+                                    <input type="text" id="CaloriesIncome"  ref={income} name="income"  /><br />
+                                     
                                 </label>
-                                <label for="burned">Calories Burnned:<br />
+                               
+                                <label for="burned"><p id="calinc">Calories Burnned:</p><br />
                                     <input type="text" id="CaloriesBurnned" ref={burnned} name="burnned" /><br />
                                 </label>
-                                <label for="slept">Hours Slept:<br />
+                                <label for="slept"><p id="calinc">Hours Slept:</p><br />
                                     <input type="text" id="HoursSlept" ref={slept} name="slept" /><br />
                                 </label>
-                                <label for="walked">Steps Walked :<br />
+                                <label for="walked"><p id="calinc">Steps Walked :</p><br />
                                     <input type="text" id="StepsWalked" ref={walked} name="walked" /><br />
                                 </label>
-                                <label for="rate">Hydration Rate:<br />
+                                <label for="rate"><p id="calinc">Hydration Rate:</p><br />
                                     <input type="text" id="HydrationRate" ref={rate} name="rate" /><br />
                                 </label>
                                 <button onClick={postData} >Submit</button>

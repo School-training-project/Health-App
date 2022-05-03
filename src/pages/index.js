@@ -1,5 +1,6 @@
 
 import React from 'react';
+//import './index.css';
 const test = () => {
   
   return ( <div
@@ -9,7 +10,7 @@ const test = () => {
                   alignItems: 'center',
                   height: '100vh'
               }}>   
-              <h1>Welcome to our website</h1>
+              <h1 id='omar'>Welcome to our website</h1>
       
       
       </div>

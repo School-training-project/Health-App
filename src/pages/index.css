@@ -1,0 +1,19 @@
+#omar::before,
+ #omar::after{
+   content:"" ;
+   position: absolute ;
+   top:0;
+   right:0;
+   bottom:0;
+   left:0;
+ }
+ #omar::before{
+   background-color: rgb(121, 226, 153);
+   animation: typerwriter 1s steps(22) forwards;
+ }
+ @keyframes typerwriter {
+   to {
+     left: 100%;
+   }
+   
+ }
