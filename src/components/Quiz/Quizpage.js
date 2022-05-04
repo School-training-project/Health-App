@@ -1,8 +1,10 @@
 import React from 'react';
 import './quiz.css';
 import { useState } from 'react';
+import { Questions } from './Questions.js';
 
 const Q = () =>{
+/*
 function quizEnd(){
     setDc("Complete!")
     setDisp("none")
@@ -181,6 +183,13 @@ const click = () => {
         ><img src={require("./mramettakya.png")} className="image"></img></div>
         </div>
     )
-};
+*/
+return(
+<div className="bar">
+
+</div>
+
+)};
+
 export default Q;
 

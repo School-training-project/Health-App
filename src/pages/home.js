@@ -59,23 +59,21 @@ const Home = () => {
 
     let caloriesBurnt=caloriesBurntdb  //this will come from the user input
     let idealcalb=2500
-    
     let calbNum=(200*caloriesBurnt)/idealcalb //assuming 500 is ideal
     let calb=calbNum.toString()+"px"
-    calb= calbNum>500 ? "+500 kcal":calb
+    calb= calbNum>idealcalb ? `+${idealcalb} kcal`:calb
 
     let caloriesConsumed=caloriesIncome //this will come from user input
     let idealcalc=3500
-    
     let calcNum=(200*caloriesConsumed)/idealcalc //assuming 3500 for male
     let calc=calcNum.toString()+"px"
-    calc= calcNum>3500 ? "+3500 kcal":calc
+    calc= calcNum>idealcalc ? `+${idealcalc} kcal`:calc
     
     let stepsWalked=stepsWalkeddb //this will come from user input
     let idealstps=20000
     let stpsNum=(200*stepsWalked)/idealstps //assuming 20,000 ideal
     let stps=stpsNum.toString()+"px"
-    stps= stpsNum>10000 ? "+10000 kcal":stps
+    stps= stpsNum>idealstps ? `+${idealstps} stps`:stps
 
     return (
         <div className="Container">

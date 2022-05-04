@@ -41,7 +41,7 @@ function App() {
           <PrivateRoute  path="/progress" component={Landing} />
           <PrivateRoute  path="/home" component={Landing} />
           <PrivateRoute  path="/map" component={Landing} />
-          <PrivateRoute  path="/quiz" component={Landing} />
+          <Route  path="/quiz" component={Landing} />
           <PrivateRoute  path="/blog" component={Landing} />
         </Switch>
         
