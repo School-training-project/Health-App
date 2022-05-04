@@ -3,6 +3,7 @@ import "react-map-gl-geocoder/dist/mapbox-gl-geocoder.css";
 import React, { useState, useRef,useEffect, useCallback } from "react";
 import Map ,{GeolocateControl}from "react-map-gl";
 import Geocoder from "react-map-gl-geocoder";
+import { motion } from 'framer-motion/dist/framer-motion'
 
 const MAPBOX_TOKEN =
   "pk.eyJ1Ijoic3VwZXJoMjU3IiwiYSI6ImNsMWM4ajdkOTA1OGQzam5yampkM3c4aDEifQ.TO-_alEhY5rydxgDGaF_Kw";
@@ -55,6 +56,10 @@ function Map1() {
   );
 
   return (
+    <motion.div 
+        initial={{opacity:0}}
+        animate={{opacity:1}}
+        exit={{ opacity: 0 }}>
     <div>
       <div
         style={{
@@ -144,6 +149,7 @@ function Map1() {
       </Map>
     </div>
     </div>
+    </motion.div>
   );
 }
 

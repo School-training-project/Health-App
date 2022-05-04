@@ -3,10 +3,13 @@ import axios from "axios";
 import { ContextProvider } from "../components/Blog/Context";
 import Articles from "../components/Blog/Articles";
 import '../components/Blog/blogstyle.css';
-
+import { motion } from 'framer-motion/dist/framer-motion';
 export const blog=(props)=>{
     return (
-        <div className="center"
+        <motion.div initial={{opacity:0}}
+        animate={{opacity:1}}
+        exit={{ opacity: 0 }}>
+            <div className="center"
             style={{
                 
                 justifyContent: 'center',
@@ -24,6 +27,7 @@ export const blog=(props)=>{
                 <Articles/>
             </ContextProvider>
         </div>
+        </motion.div>
     )
 }
 
