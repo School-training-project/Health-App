@@ -5,7 +5,7 @@ import { PieChart } from "../components/Charts/PieChart";
 import Carousel from "react-elastic-carousel"
 import Item from "../components/Item/Item";
 import './progress.css';
-
+import { motion } from 'framer-motion/dist/framer-motion'
 const Progress = () => {
     const [stepsData, setStepsData] = useState([])
     const [caloriesBurnedData, setCaloriesData] = useState([])
@@ -158,6 +158,10 @@ const Progress = () => {
         return <p>There was an error loading your data!</p>;
     }
     return (
+        <motion.div 
+        initial={{opacity:0}}
+        animate={{opacity:1}}
+        exit={{ opacity: 0 }}>
         <>
             <div style={{
                 display: 'flex',
@@ -259,6 +263,7 @@ const Progress = () => {
                 </Carousel>
             </div>
         </>
+        </motion.div>
     );
 };
 

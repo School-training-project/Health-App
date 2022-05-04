@@ -1,6 +1,7 @@
 import React,{useEffect,useState} from "react";
 import '../components/Homestyle/homestyle.css'
-//import { motion } from "framer-motion"
+import { motion } from 'framer-motion/dist/framer-motion'
+import { animate } from "framer-motion";
 
 const Home = () => {
     const dotw = ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"]
@@ -78,7 +79,11 @@ const Home = () => {
     stps= stpsNum>10000 ? "+10000 kcal":stps
 
     return (
-        <div className="Container">
+        <motion.div 
+        initial={{opacity:0}}
+        animate={{opacity:1}}
+        exit={{ opacity: 0 }}>
+	        <div className="Container">
             <div className="Date">{today}</div>
             <div className="Data">
             <div className="topElements">
@@ -118,6 +123,7 @@ const Home = () => {
             </div>
             </div>
         </div>
+        </motion.div>
     );
 };
 
