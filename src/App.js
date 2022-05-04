@@ -1,6 +1,6 @@
 import  React from "react";
 import "./App.css";
-import { BrowserRouter as Router, Switch, Route, useLocation,useHistory } from "react-router-dom";
+import { BrowserRouter as Router, Switch, Route, useLocation } from "react-router-dom";
 import Landing from "./Landing";
 import { Signout } from "./pages/signout";
 import jwt_decode from "jwt-decode";
@@ -9,8 +9,6 @@ import { setCurrentUser, logoutUser } from "./actions/authActions";
 import { Provider } from "react-redux";
 import store from "./store";
 import PrivateRoute from "./components/private-route/PrivateRoute";
-import { AnimatePresence } from 'framer-motion/dist/framer-motion';
-
 // Check for token to keep user logged in
 if (localStorage.jwtToken) {
   // Set auth token header auth
@@ -38,16 +36,14 @@ function App() {
         <div className="App">
           <Route exact path="/" component={Signout} />
         </div>
-        <AnimatePresence>
-          <Switch location={location} key={location.pathname}>
+        <Switch>
           <PrivateRoute  path="/test" component={Landing} />
           <PrivateRoute  path="/progress" component={Landing} />
           <PrivateRoute  path="/home" component={Landing} />
           <PrivateRoute  path="/map" component={Landing} />
-          <Route  path="/quiz" component={Landing} />
+          <PrivateRoute  path="/quiz" component={Landing} />
           <PrivateRoute  path="/blog" component={Landing} />
         </Switch>
-        </AnimatePresence>
         
       </Router>
     </Provider>
