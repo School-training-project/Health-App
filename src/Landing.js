@@ -18,10 +18,15 @@ class Landing extends Component {
                 <Switch>
                     <Route path="/signin" component={Signout} />
                     <div>
-                        <div className="nav">
+                        <div className="Top"
+                        >
                             <Navbar />
                         </div>
-                        <div className="notnav">
+                        <div className="notnav"
+                        style={{
+                            overflow:"hidden"
+                        }}
+                        >
                             <DarkMode />
                             <Route exact path="/test" component={Test} />
                             <Route path="/home" component={home} />

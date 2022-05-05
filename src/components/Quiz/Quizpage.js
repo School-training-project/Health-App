@@ -2,6 +2,7 @@ import React from 'react';
 import './quiz.css';
 import { useState } from 'react';
 import { Questions } from './Questions.js';
+import { Button } from '@mui/material';
 
 const Q = () =>{
 /*
@@ -184,12 +185,32 @@ const click = () => {
         </div>
     )
 */
+const [Content,setContent]=useState("Welcome to the Quiz")
+/*for(let e in Questions){
+    setContent(e[0])
+    setTimeout(200)
+    if(e==){break}
+}*/
 return(
-<div className="bar">
+<div className='container'>
+<div className="BarOuter">
+    <div className="BarInner">
+        <div className="questions">
+            {Content}
+        </div>
+    </div>
+</div>
+<div className='Slider'>
 
+</div>
+<div className='Buttons'>
+    <button>Previous</button>
+    <button>Next</button>
+</div>
 </div>
 
 )};
+
 
 export default Q;
 
