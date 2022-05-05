@@ -1,8 +1,8 @@
 import React from 'react';
 import './quiz.css';
 import { useState } from 'react';
-import { Questions } from './Questions.js';
-import { Button } from '@mui/material';
+import { Questions,frequency } from './Questions.js';
+import { Slider } from '@mui/material';
 
 const Q = () =>{
 /*
@@ -191,6 +191,46 @@ const [Content,setContent]=useState("Welcome to the Quiz")
     setTimeout(200)
     if(e==){break}
 }*/
+const marks = [
+    {
+      value: 0,
+      label: 'Never',
+    },
+    {
+        value: 1,
+        
+      },{
+        value: 2,
+        
+      },{
+        value: 3,
+        
+      },{
+        value: 4,
+        
+      },{
+        value: 5,
+        
+      },{
+        value: 6,
+        
+      },{
+        value: 7,
+       
+      },{
+        value: 8,
+      },
+    {
+        value: 9,
+        label: 'Often',
+      },
+  ];
+  const [value, setValue] = React.useState(5);
+
+  const handleSliderChange = (event, newValue) => {
+    setValue(newValue);
+  };
+
 return(
 <div className='container'>
 <div className="BarOuter">
@@ -201,11 +241,33 @@ return(
     </div>
 </div>
 <div className='Slider'>
-
+    <Slider
+    size="small"
+    value={typeof value === 'number' ? value : 0}
+    label
+    onChange={handleSliderChange}
+    defaultValue={5}
+    step={1}
+    marks={marks}
+    min={0}
+    max={9}
+    sx={{
+        color: "#42CD8C",
+        height:'10px',
+        '& .MuiSlider-thumb': {
+            height:24,
+            width:24,
+          },
+        
+      }}
+    />
+    <div className="option">
+        {`${frequency[value]}`}
+    </div>
 </div>
 <div className='Buttons'>
-    <button>Previous</button>
-    <button>Next</button>
+    <button>PREVIOUS</button>
+    <button onClick={console.log("Hello")}>NEXT</button>
 </div>
 </div>
 

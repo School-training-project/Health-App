@@ -1,3 +1,18 @@
+export const frequency=[
+    "Never",
+    "Once a month",
+    "Twice a month",
+    "Once a week",
+    "Twice a week",
+    "3-4 times a week",
+    "5-6 times a week",
+    "Once a day",
+    "Twice a day",
+    "Often"
+
+]
+
+
 export const Questions={
     /*{
         Food:[Question in string format,1..10scores in function of frequency frequency]}  frequency is as follows :

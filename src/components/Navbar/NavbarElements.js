@@ -85,6 +85,7 @@ export const NavLink = styled(Link)`
         #1E3163 50%,
         white 50%
     );
+    margin-right:20px;
     background-size: 200% 100%;
     background-position: ${origin};
     -webkit-background-clip: text;
