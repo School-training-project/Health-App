@@ -4,6 +4,8 @@ import { useState } from 'react';
 import { Questions,frequency } from './Questions.js';
 import { Slider } from '@mui/material';
 
+let counter=0
+let score=Array(40)
 const Q = () =>{
 /*
 function quizEnd(){
@@ -186,11 +188,68 @@ const click = () => {
     )
 */
 const [Content,setContent]=useState("Welcome to the Quiz")
-/*for(let e in Questions){
-    setContent(e[0])
-    setTimeout(200)
-    if(e==){break}
-}*/
+setTimeout(startQuiz, 2000);
+
+function changeQuestion(counter){
+    setFood(Questions[counter][0])
+}
+
+function startQuiz(){
+    setContent("How often do you eat :")
+    if(counter<40){
+    setFood(Questions[counter][0])}
+    const P= document.getElementById('prev')
+    P.onclick=function(){
+        //counter = (counter==0) ? 0 : counter-1
+        if(counter>0){
+            counter=counter-1
+            //console.log('prev moula l3amla')
+        }
+        if(counter==0){
+            P.style.color="#ccc"
+        }
+        else{P.style.color="#000"}
+        console.log(counter)
+        setValue(defaultValue)
+        if(counter!=40){
+            N.style.color="#000"
+        }
+        changeQuestion(counter)
+        console.log(score)
+    }
+    const N= document.getElementById('next')
+    N.onclick=function(){
+        //counter = (counter==40) ? 40 : counter+1
+        if(counter<40){
+            counter=counter+1
+            //console.log('next moula l3amla')
+        }
+        
+        if(counter==40){
+            N.style.color="#ccc"
+            setTimeout(endQuiz, 2000);
+
+        }
+        if(counter!=0){
+            P.style.color="#000"
+        }
+
+        console.log(counter)
+        setValue(defaultValue)
+        if(counter<40){
+        changeQuestion(counter)}
+        score[counter-1]=Questions[counter-1][value+1]
+        console.log(score)
+    }
+
+
+}
+
+function endQuiz(){
+    var lodash = require('lodash');
+    var sum=Math.round(lodash.sum(score))
+    console.log(sum)
+}
 const marks = [
     {
       value: 0,
@@ -225,28 +284,37 @@ const marks = [
         label: 'Often',
       },
   ];
-  const [value, setValue] = React.useState(5);
-
-  const handleSliderChange = (event, newValue) => {
-    setValue(newValue);
-  };
+  const defaultValue=5
+  const [value, setValue] =useState(defaultValue);
+  const [food,setFood]=useState("")
+  //const handleSliderChange = (event, newValue) => {
+ //   setValue(newValue);
+ // };
 
 return(
 <div className='container'>
 <div className="BarOuter">
     <div className="BarInner">
         <div className="questions">
-            {Content}
+            <div className="Content">{Content}</div>
+            <div className="food">{food}</div>
+            <div className="icon">
+             {/*<img src={require(`./FoodIcons/Icon${counter}.png`)} className="icon"></img>*/}
+            </div>
+
         </div>
     </div>
 </div>
 <div className='Slider'>
     <Slider
     size="small"
-    value={typeof value === 'number' ? value : 0}
+    value={value}
     label
-    onChange={handleSliderChange}
-    defaultValue={5}
+    
+    //onChange={handleSliderChange}
+    onChange={(_, value) => setValue(value)}
+    defaultValue={defaultValue}
+    
     step={1}
     marks={marks}
     min={0}
@@ -264,10 +332,11 @@ return(
     <div className="option">
         {`${frequency[value]}`}
     </div>
+    
 </div>
 <div className='Buttons'>
-    <button>PREVIOUS</button>
-    <button onClick={console.log("Hello")}>NEXT</button>
+    <button id='prev'>PREVIOUS</button>
+    <button id='next'>NEXT</button>
 </div>
 </div>
 
