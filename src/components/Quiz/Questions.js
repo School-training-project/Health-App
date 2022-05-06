@@ -34,7 +34,7 @@ Score is accesed via Questions.<Food>[Frequency index]
 
     ["Berries",0,1,1.9,2.8,2.9,3,3.6,3.65,3.7,3.75],
 
-   ["Greens",0,0.2,0.6,1,2.8,3,3.3,3.6,3.7,3.75],
+    ["Greens",0,0.2,0.6,1,2.8,3,3.3,3.6,3.7,3.75],
 
     ["Colorful Vegetables",0,0.2,0.4,0.6,1.2,1.8,2.8,3.2,3.4,3.75],
 
@@ -95,10 +95,15 @@ Score is accesed via Questions.<Food>[Frequency index]
     ["Fried Food",3.75,3.5,3.2,2.4,1.5,1,0.6,0.3,0.05,0],
     
     ["Take out or Fast Food",3.75,3.5,3.2,2.4,1.5,1,0.6,0.3,0.05,0],
+
     ["You usually drink Water",0,0.2,0.4,0.6,1.2,1.8,2.8,3.2,3.4,3.75],
+
     ["Sugary Drinks",3.75,3.5,3.2,2.4,1.5,1,0.6,0.3,0.05,0],
+
     ["Fruit Juice",0,1.5,2,2.4,2.8,3.1,3.4,3.75,3.6,3],
+
     ["Alcohol",3.75,3.5,3.2,2.4,1.5,1,0.6,0.3,0.05,0],
+    
     ["Moderate Exercise",0,0.2,0.4,0.6,1.2,1.8,2.8,3.2,3.4,3.75],
     ["High Intensity Exercise",0,1.5,2,2.4,2.8,3.1,3.4,3.75,2.6,2],
     ["Strength Exercise",0,1.5,2,2.4,2.8,3.1,3.4,3.75,2.6,2],
@@ -110,3 +115,4 @@ Score is accesed via Questions.<Food>[Frequency index]
 //https://health.gov/sites/default/files/2019-09/2015-2020_Dietary_Guidelines.pdf
 //https://www.who.int/news-room/fact-sheets/detail/healthy-diet
 
+//icons by https://icons8.com/

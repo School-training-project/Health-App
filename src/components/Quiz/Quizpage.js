@@ -6,6 +6,7 @@ import { Slider } from '@mui/material';
 
 let counter=0
 let score=Array(40)
+let iconindex=-1
 const Q = () =>{
 /*
 function quizEnd(){
@@ -188,7 +189,7 @@ const click = () => {
     )
 */
 const [Content,setContent]=useState("Welcome to the Quiz")
-setTimeout(startQuiz, 2000);
+setTimeout(startQuiz, 4000);
 
 function changeQuestion(counter){
     setFood(Questions[counter][0])
@@ -196,6 +197,7 @@ function changeQuestion(counter){
 
 function startQuiz(){
     setContent("How often do you eat :")
+    iconindex=0
     if(counter<40){
     setFood(Questions[counter][0])}
     const P= document.getElementById('prev')
@@ -203,6 +205,7 @@ function startQuiz(){
         //counter = (counter==0) ? 0 : counter-1
         if(counter>0){
             counter=counter-1
+            iconindex=counter
             //console.log('prev moula l3amla')
         }
         if(counter==0){
@@ -222,6 +225,7 @@ function startQuiz(){
         //counter = (counter==40) ? 40 : counter+1
         if(counter<40){
             counter=counter+1
+            iconindex=counter
             //console.log('next moula l3amla')
         }
         
@@ -298,8 +302,8 @@ return(
         <div className="questions">
             <div className="Content">{Content}</div>
             <div className="food">{food}</div>
-            <div className="icon">
-             {/*<img src={require(`./FoodIcons/Icon${counter}.png`)} className="icon"></img>*/}
+            <div className="iconer">
+            <img src={require(`./FoodIcons/Icon${iconindex}.png`)} className="icon"></img>
             </div>
 
         </div>
