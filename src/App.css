@@ -36,7 +36,7 @@ body.light{
 div>[class$='active'] {
     position: relative;
     transform:scale(1.4);
-    box-shadow: 0px 26px 0px -1px white;
+    box-shadow: 0px 26px 0px -1px var(--background-color);
 }
 body.dark{
     --blackquiz:var(--whitequiz);
