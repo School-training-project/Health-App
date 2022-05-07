@@ -12,6 +12,7 @@ import {  withRouter } from "react-router-dom";
 import { logoutUser } from '../../actions/authActions';
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
+import { display, margin, positions } from '@mui/system';
 
 
 
@@ -21,8 +22,13 @@ class Navbar extends Component {
         this.props.logoutUser();
         window.location.pathname = "/";
     };
+    
     render() {
         const { user } = this.props.auth;
+        let score = parseInt(localStorage.getItem("score"))
+
+        let scorehome= localStorage.getItem('scorehome')
+        score+=parseInt(scorehome)
         return (
             <div className='nav'>
                 <Nav>
@@ -57,6 +63,19 @@ class Navbar extends Component {
                         >
                             Map
                         </NavLink>
+                        {score>0 &&
+                            <div style={{
+                            backgroundColor:"white",
+                            color:"black",
+                            width:"100px",
+                            height:"30px",
+                            borderRadius:"20px",
+                            textAlign:"center",
+                            paddingTop:"7px",
+                            cursor:"pointer"
+                        }}>
+                            {score}
+                        </div>}
                         <NavBtn>
                             <NavBtnLink onClick={this.onLogoutClick} to='/' >Sign out</NavBtnLink>
                         </NavBtn>

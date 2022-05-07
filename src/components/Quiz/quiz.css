@@ -114,3 +114,8 @@ body {
     cursor:pointer;
 
 }
+.iconer{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}

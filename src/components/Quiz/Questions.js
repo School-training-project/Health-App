@@ -1,3 +1,45 @@
+export const waterFrequency=[
+    "Rarely",
+    "one glass every 2 days",
+    "one glass a day",
+    "two glasses a day",
+    "three glasses a day",
+    "four glasses a day",
+    "five glasses a day",
+    "six glasses a day",
+    "seven glasses a day",
+    "8+ glasses a day"
+
+]
+
+export const exerciseFrequency=[
+    "Never",
+    "15 mins a week",
+    "30 mins a week",
+    "1 hour a week",
+    "2 hours a week",
+    "2 hours and a half a week",
+    "3 hours a week",
+    "4 hours a week",
+    "5 hours a week",
+    "6 hours +"
+
+]
+
+export const percentage=[
+    "0%",
+    "15%",
+    "25%",
+    "40%",
+    "50%",
+    "60%",
+    "70%",
+    "80%",
+    "90%",
+    "100%"
+
+]
+
 export const frequency=[
     "Never",
     "Once a month",
@@ -34,7 +76,7 @@ Score is accesed via Questions.<Food>[Frequency index]
 
     ["Berries",0,1,1.9,2.8,2.9,3,3.6,3.65,3.7,3.75],
 
-   ["Greens",0,0.2,0.6,1,2.8,3,3.3,3.6,3.7,3.75],
+    ["Greens",0,0.2,0.6,1,2.8,3,3.3,3.6,3.7,3.75],
 
     ["Colorful Vegetables",0,0.2,0.4,0.6,1.2,1.8,2.8,3.2,3.4,3.75],
 
@@ -70,15 +112,15 @@ Score is accesed via Questions.<Food>[Frequency index]
     
     ["Bread",0,1.5,2,2.4,2.8,3.1,3.4,3.75,3.6,3],
     
-    ["How much of that bread is Whole Grain Bread",0,2,2.3,2.9,3.1,3.4,3.5,3.7,3.725,3.75],
+    ["Whole Grain Bread",0,2,2.3,2.9,3.1,3.4,3.5,3.7,3.725,3.75],
 
     ["Pasta",0,1.5,2,2.4,2.8,3.1,3.4,3.75,3.6,3],
 
-    ["How much of that bread is Whole Grain Pasta",0,2,2.3,2.9,3.1,3.4,3.5,3.7,3.725,3.75],
+    ["Whole Grain Pasta",0,2,2.3,2.9,3.1,3.4,3.5,3.7,3.725,3.75],
 
     ["Rice",0,1.5,2,2.4,2.8,3.1,3.4,3.75,3.6,3],
 
-    ["How much of that bread is Whole Grain Rice",0,2,2.3,2.9,3.1,3.4,3.5,3.7,3.725,3.75],
+    ["Whole Grain Rice",0,2,2.3,2.9,3.1,3.4,3.5,3.7,3.725,3.75],
 
     ["Super Grains (quinoa, bulgur, amaranth ...)",0,0.1,0.3,0.5,1,1.3,2,2.8,3.5,3.75],
 
@@ -95,13 +137,22 @@ Score is accesed via Questions.<Food>[Frequency index]
     ["Fried Food",3.75,3.5,3.2,2.4,1.5,1,0.6,0.3,0.05,0],
     
     ["Take out or Fast Food",3.75,3.5,3.2,2.4,1.5,1,0.6,0.3,0.05,0],
-    ["You usually drink Water",0,0.2,0.4,0.6,1.2,1.8,2.8,3.2,3.4,3.75],
+
+    ["Water",0,0.2,0.4,0.6,1.2,1.8,2.8,3.2,3.4,3.75],
+
     ["Sugary Drinks",3.75,3.5,3.2,2.4,1.5,1,0.6,0.3,0.05,0],
+
     ["Fruit Juice",0,1.5,2,2.4,2.8,3.1,3.4,3.75,3.6,3],
+
     ["Alcohol",3.75,3.5,3.2,2.4,1.5,1,0.6,0.3,0.05,0],
+    
     ["Moderate Exercise",0,0.2,0.4,0.6,1.2,1.8,2.8,3.2,3.4,3.75],
-    ["High Intensity Exercise",0,1.5,2,2.4,2.8,3.1,3.4,3.75,2.6,2],
-    ["Strength Exercise",0,1.5,2,2.4,2.8,3.1,3.4,3.75,2.6,2],
+
+    ["High Intensity Exercise",0, 1.5 ,2 ,2.4 ,2.8 ,3.1 ,3.4,3.75,2.6,2],
+    
+    ["Strength Exercise",0, 1.5 ,2 ,2.4 ,2.8 ,3.1 ,3.4,3.75,2.6,2],
+
+    ["Good Job!"]
     
 
     ]
@@ -110,3 +161,4 @@ Score is accesed via Questions.<Food>[Frequency index]
 //https://health.gov/sites/default/files/2019-09/2015-2020_Dietary_Guidelines.pdf
 //https://www.who.int/news-room/fact-sheets/detail/healthy-diet
 
+//icons by https://icons8.com/
