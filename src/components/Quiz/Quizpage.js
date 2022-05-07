@@ -20,7 +20,6 @@ const Q = () => {
     const [value, setValue] = useState(defaultValue);
     const [food, setFood] = useState("")
     useEffect(() => {
-        counter=-1
         setTimeout(startQuiz, 2000);
         setTimeout(counter++,2000)
         for (let i =0;i<40;i++){
@@ -31,7 +30,7 @@ const Q = () => {
     var sum = 0
     var baseurl = ""
     function changeQuestion(id) {
-        if (id<= 40) { setFood(Questions[id][0]) }
+        if (id< 40) { setFood(Questions[id][0]) }
         else { endQuiz() }
         //Question Exceptions
         if (id===40) { setContent("You completed the Quiz") }
@@ -66,21 +65,22 @@ const Q = () => {
         counter = counter<40 ? (counter+1): 40
         console.log(counter)
         changeQuestion(counter)
-        console.log(score)
         n.style.color= counter>=40? "#ccc":"#000"
         p.style.color= counter>0? "#000":"#ccc"
         setValue(history[counter])
+        
     }
     function startQuiz() {
         setContent("How often do you eat :")
         setFood(Questions[counter][0])
     }
 
-    function endQuiz() {
+    const endQuiz=()=> {
         var lodash = require('lodash');
         sum = Math.round(lodash.sum(score))
         const baseurl = "http://localhost:3001/userdata/" + email + "/" + sum.toString()
         setUrl(baseurl)
+        setValue(sum)
         localStorage.setItem("score",sum)
     }
     useEffect(async () => {
@@ -103,8 +103,7 @@ const Q = () => {
                 setLoading(true)
                 const response = await fetch(url)
                 const json = await response.json()
-                setDate(json[0].score[score.length-1].day)
-                lastdate=datequiz.split(" ")
+                setDate(json[0].score)
             } catch (err) {
                 console.log("error", err)
             } finally {
