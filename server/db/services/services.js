@@ -90,7 +90,11 @@ const pushObjDataCaloriesBurnt = async (number, cond) => {
 }
 const pushObjDataCaloriesIncome = async (number, cond) => {
     const result = await db.Data.updateOne( cond , { $push: { caloriesIncome: { calories: number, day: `${formatted}` } } })
+    return result
+}
 
+const pushObjDataScore = async (number, cond) => {
+    const result = await db.Data.updateOne( cond , { $push: { score: { score: number, day: `${formatted}` } } })
     return result
 }
 
@@ -118,3 +122,4 @@ module.exports.pushObjDataCaloriesBurnt = pushObjDataCaloriesBurnt
 module.exports.pushObjDataCaloriesIncome = pushObjDataCaloriesIncome
 module.exports.createUserData = createUserData
 module.exports.pushObjDataHydrationRate = pushObjDataHydrationRate
+module.exports.pushObjDataScore=pushObjDataScore

@@ -29,5 +29,17 @@ router.post("/:email",async(req,res)=>{
     }
     
 })
+router.post("/:email/:score",async(req,res)=>{
+    const email = req.params.email
+    const score = req.params.score
+    try{
+        await db.pushObjDataScore(parseInt(score),{email:email})
+        res.send("Sucess inputting score").status(200)
+        
+    }catch(err){
+        res.status(400).send(err)
+    }
+    
+})
 
 module.exports=router
