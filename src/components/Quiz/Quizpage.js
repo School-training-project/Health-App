@@ -188,14 +188,18 @@ const Q = () => {
         )
     */
     const [Content, setContent] = useState("Welcome to the Quiz")
+    const [loading, setLoading] = useState(false);
+    const [error, setError] = useState();
+    const [post,setPost]= useState()
+    const email = localStorage.getItem("email")
     setTimeout(startQuiz, 2000);
     var sum =0
     var baseurl=""
-    const [url,setUrl]= useState("statatatatatat")
+    const [url,setUrl]= useState("0")
     function changeQuestion(counter) {
         setFood(Questions[counter][0])
     }
-
+    const [datequiz,setDate]= useState()
     function startQuiz() {
         setContent("How often do you eat :")
         if (counter < 40) {
@@ -246,7 +250,7 @@ const Q = () => {
             console.log(score)
         }
     }
-    const email = localStorage.getItem("email")
+    
     function endQuiz() {
         var lodash = require('lodash');
         sum =Math.round(lodash.sum(score))
@@ -262,12 +266,27 @@ const Q = () => {
         };
         try{
             await fetch(url, requestOptions)
-                
+            setPost("posted")
         }catch{
             console.log("err ")
         }
     }, [url])
-    
+    useEffect(() => {
+        const url = "http://localhost:3001/userdata/" + email
+        const fetchData = async () => {
+            try {
+                setLoading(true)
+                const response = await fetch(url)
+                const json = await response.json()
+                setDate(json[0].score)
+            } catch (err) {
+                console.log("error", err)
+            } finally {
+                setLoading(false)
+            }
+        }
+        fetchData()
+    }, [post])
     const marks = [
         {
             value: 0,
@@ -309,6 +328,19 @@ const Q = () => {
     //   setValue(newValue);
     // };
 
+    if (loading) {
+        return <p>Data is loading...</p>;
+    }
+    
+    console.log(datequiz)
+    const d = new Date()
+    const today = d.getDate()
+    // let lasttimequiz = datequiz.day.split(" ")
+    // if (parseInt(lasttimequiz)-today>15){
+    //     return(<div>
+    //         come back in a few days 
+    //     </div>)
+    // }
     return (
         <div className='container'>
             <div className="BarOuter">
