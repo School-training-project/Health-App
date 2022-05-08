@@ -44,7 +44,8 @@ class Signin extends Component {
         const { errors } = this.state;
         return (
             <>
-                <div className="flex flex-col w-full max-w-md px-4 py-8 bg-white rounded-lg shadow dark:bg-gray-800 sm:px-6 md:px-8 lg:px-10">
+            <h1 style={{ textAlign: 'center' ,fontWeight: 'bold' , marginTop: '10%' , color: '#34acae', marginBottom:'10%'}}>Sign In</h1>
+                <div  className="form-group">
                     <div className="mt-8">
                         <form action="#" noValidate onSubmit={this.onSubmit} autoComplete="off">
                             <div className="flex flex-col mb-2">
@@ -94,7 +95,7 @@ class Signin extends Component {
                             <div className="flex items-center mb-6 -mt-4">
                             </div>
                             <div className="flex w-full">
-                                <button type="submit" className="py-2 px-4  bg-purple-600 hover:bg-purple-700 focus:ring-purple-500 focus:ring-offset-purple-200 text-white w-full transition ease-in duration-200 text-center text-base font-semibold shadow-md focus:outline-none focus:ring-2 focus:ring-offset-2  rounded-lg  " >
+                                <button type="submit" id="loginbutton" className="signbutton" >
                                     Login
                                 </button>
                             </div>

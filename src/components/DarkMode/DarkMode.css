@@ -13,7 +13,7 @@
     transition: background-color 0.2s ease-in-out,filter 1s ease-in-out, box-shadow .2s ease-in-out, transform .3s ease-in-out;
     top:10px;
     left:10px;
-    animation: myAnimdark 2s ease 3s 1 normal forwards;
+    margin-right:30px;
 }
 @keyframes myAnimdark {
 	0%,
