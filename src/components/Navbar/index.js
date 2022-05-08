@@ -29,11 +29,15 @@ class Navbar extends Component {
 
         let scorehome= localStorage.getItem('scorehome')
         score+=parseInt(scorehome)
+        // const higher= document.getElementById("navforhigher")
+        // if ((score >50)&&(higher)){
+        //     // higher.style.boxShadow= "0px 0px 30px 5px rgba(212,149,0,0.75)"
+        //     higher.style.color="red"
+        // }
         return (
-            <div className='nav'>
-                <Nav>
+            <div className='nav' >
+                <Nav  >
                     <NavLogo to="/test" >
-
                         HEALTH APP
                     </NavLogo>
                     <Bars />
@@ -64,9 +68,11 @@ class Navbar extends Component {
                             Map
                         </NavLink>
                         {score>0 &&
-                            <div style={{
+                            <div id="scoreContainer" style={{
                             backgroundColor:"white",
-                            color:"black",
+                            color:"#496366",
+                            letterSpacing:"1px",
+                            fontWeight:"600",
                             width:"100px",
                             height:"30px",
                             borderRadius:"20px",
@@ -74,7 +80,7 @@ class Navbar extends Component {
                             paddingTop:"7px",
                             cursor:"pointer"
                         }}>
-                            {score}
+                            Scr: {score}
                         </div>}
                         <NavBtn>
                             <NavBtnLink onClick={this.onLogoutClick} to='/' >Sign out</NavBtnLink>

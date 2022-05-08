@@ -32,8 +32,9 @@ const Q = () => {
     function changeQuestion(id) {
         if (id< 40) { setFood(Questions[id][0]) }
         else { endQuiz() }
+        
         //Question Exceptions
-        if (id===40) { setContent("You completed the Quiz") }
+        if (id===40) { setContent("You completed the Quiz");setFood(Questions[id][0]) }
         else if ((id===37)||(id === 38)||(id === 39)) { setContent("How often do you do :") }
         else if ((id === 33)||(id === 34)||(id === 35)||(id === 36)) { setContent("How often do you drink :") }
         else if ((id === 20)||(id === 22)||(id === 24)||(id === 36)) { setContent("How much of that is :") }
@@ -52,9 +53,10 @@ const Q = () => {
         console.log(counter)
         changeQuestion(counter)
         // styling
-        p.style.color= counter===0? "#ccc":"#000"
-        n.style.color= counter<40? "#000":"#ccc"
-        setValue(history[counter])
+        if ((n!=null)&&(p!=null)){
+            p.style.color= counter===0? "#ccc":"#000"
+            n.style.color= counter<40? "#000":"#ccc"}
+            setValue(history[counter])
     }
     const nextClick= ()=>{
         if (counter <40) {
@@ -65,8 +67,10 @@ const Q = () => {
         counter = counter<40 ? (counter+1): 40
         console.log(counter)
         changeQuestion(counter)
-        n.style.color= counter>=40? "#ccc":"#000"
-        p.style.color= counter>0? "#000":"#ccc"
+        if ((n!=null)&&(p!=null)){
+            n.style.color= counter>=40? "#ccc":"#000"
+            p.style.color= counter>0? "#000":"#ccc"
+        }
         setValue(history[counter])
         
     }
@@ -190,7 +194,6 @@ const Q = () => {
                             height: 24,
                             width: 24,
                         },
-
                     }}
                 />
                 <div className="option">

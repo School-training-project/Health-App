@@ -2,10 +2,11 @@
     --font:'Roboto', sans-serif;
     --dark : #282c34;
     --white: #FFF;
-    --dark-div:#FFD36E;
+    --black:#496366;
+    --dark-div:#c4c4b1;
     --yellowish:#FAFAF5;
     --blurple:#5865F2;
-    --light-div:#5584AC;
+    --light-div:#496366;
     --sun:url('./components/DarkMode/sun.svg');
     --moon:url('./components/DarkMode/moon.svg');
     --text-light:#3ba8c9;
@@ -22,7 +23,7 @@
 body.light{
     --blackquiz:var(--blackquiz);
     --background-color: var(--white);
-    --text-color: var(--dark);
+    --text-color: var(--black);
     --font-weight:400;
     --back-div:var(--dark-div);
     --img:var(--moon);
@@ -52,6 +53,19 @@ body.dark{
     --info:var(--yellowish)
 }
 
+@keyframes myAnim {
+	0% {
+		transform: scale(1);
+	}
+
+	50% {
+		transform: scale(1.08);
+	}
+
+	100% {
+		transform: scale(1);
+	}
+}
 
 
 body{

@@ -112,7 +112,6 @@ const Progress = () => {
             borderColor: function (context) {
                 const chart = context.chart;
                 const { ctx, chartArea } = chart;
-
                 if (!chartArea) {
                     // This case happens on initial chart load
                     return;
