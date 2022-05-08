@@ -21,7 +21,7 @@ npm start
 #### Create an account 
 ![image](https://user-images.githubusercontent.com/95488122/167317556-f29ee49f-ce4e-490e-b9a4-11f5ef85c863.png)
 
-#### And start exploring the website 
+#### And start exploring the website in dark or light mode 
 
 <h2 align="center">
     MADE WITH :two_hearts:
