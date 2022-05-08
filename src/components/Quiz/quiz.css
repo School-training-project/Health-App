@@ -1,4 +1,6 @@
-
+:root{
+    --shakeIntesity:2000ms;
+}
 * {
     border: 0;
     box-sizing: border-box;
@@ -109,7 +111,7 @@ body {
     
 }
 
-.Buttons> button:hover{
+.Bouton:hover{
 
     cursor:pointer;
 
@@ -118,4 +120,44 @@ body {
     display: flex;
     align-items: center;
     flex-direction: column;
+    animation: iconShake var(--shakeIntesity) ease 0s infinite normal forwards;
+}
+
+
+.Bouton:focus{
+    box-shadow: 0 0 0px 7px rgba(66, 205, 140, 0.4)!important;
+    outline: none;
+}
+
+
+@keyframes iconShake {
+	0%,
+	100% {
+		transform: rotate(0deg);
+		transform-origin: 50% 50%;
+	}
+
+	10% {
+		transform: rotate(8deg);
+	}
+
+	20%,
+	40%,
+	60% {
+		transform: rotate(-10deg);
+	}
+
+	30%,
+	50%,
+	70% {
+		transform: rotate(10deg);
+	}
+
+	80% {
+		transform: rotate(-8deg);
+	}
+
+	90% {
+		transform: rotate(8deg);
+	}
 }

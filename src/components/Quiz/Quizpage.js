@@ -9,6 +9,8 @@ let counter = -1
 let score = Array(40)
 let lastdate= "sda"
 let history= Array(40)
+
+
 const Q = () => {
     const [Content, setContent] = useState("Welcome to the Quiz")
     const [loading, setLoading] = useState(false);
@@ -21,7 +23,8 @@ const Q = () => {
     const [value, setValue] = useState(defaultValue);
     const [food, setFood] = useState("")
     const [bgcolor,setBg]=useState("linear-gradient(90deg, rgba(73,99,102,1) 0%, #ccc 0%)")
-    const [perc,setPerc]=useState(0)
+    var  newperc
+    var r = document.querySelector(':root');
     useEffect(() => {
         setTimeout(startQuiz, 2000);
         setTimeout(counter++,2000)
@@ -29,11 +32,11 @@ const Q = () => {
             history[i]=defaultValue
         } 
     }, [])
-
+    
     var sum = 0
     var baseurl = ""
-    
     var coef=0.5
+
     function changeQuestion(id) {
         if (id< 40) { setFood(Questions[id][0]) }
         else { endQuiz() }
@@ -49,9 +52,8 @@ const Q = () => {
         else if ((id === 37)||(id === 38)||(id === 39)) { setChoices(exerciseFrequency) }
         else if ((id === 20)||(id === 22)||(id === 24) || (id === 36)) { setChoices(percentage) }
         else (setChoices(frequency))
-        setBg(` linear-gradient(90deg, rgba(73,99,102,1) ${perc}%, #ccc ${perc}%)`)
-        const  newperc=((83.5-16.5)/40)*(counter+0.1)+16.5
-        setPerc(newperc)
+        newperc=((83.5-16.5)/40)*(counter)+16.5
+        setBg(` linear-gradient(90deg, rgba(73,99,102,1) ${newperc}%, #ccc ${newperc}%)`)
     }
 
     const p= document.getElementById("prev")
@@ -95,6 +97,7 @@ const Q = () => {
         const baseurl = "http://localhost:3001/userdata/" + email + "/" + sum.toString()
         setUrl(baseurl)
         setValue(sum)
+        console.log(sum)
         localStorage.setItem("score",sum)
     }
     useEffect(async () => {
@@ -160,7 +163,6 @@ const Q = () => {
             label: choices[9],
         },
     ];
-    
     //const handleSliderChange = (event, newValue) => {
     //   setValue(newValue);
     // };
@@ -168,7 +170,9 @@ const Q = () => {
     if (loading) {
         return <p>Data is loading...</p>;
     }
+  
     
+
     return (
         <div className='container'>
             <div className="BarOuter" style={{background:`${bgcolor}`}}>
@@ -193,7 +197,7 @@ const Q = () => {
                         background:"var(--greenbar)",
                         textAlign:"center",
                         paddingTop:"25px"
-                        }}>{`${Math.round((perc*100/83.5))}%`}</div>
+                        }}>{`${Math.round(counter*100/40)}%`}</div>
             <div className='Slider'>
                 <Slider
                     size="small"
@@ -201,7 +205,7 @@ const Q = () => {
                     label
 
                     //onChange={handleSliderChange}
-                    onChange={(_, value) => setValue(value)}
+                    onChange={(_, value) =>{setValue(value);r.style.setProperty('--shakeIntesity', `${(9*4000)/(5*(value+0.2))}ms`);}}
                     defaultValue={defaultValue}
 
                     step={1}
@@ -223,8 +227,8 @@ const Q = () => {
 
             </div>
             <div className='Buttons'>
-                <button onClick={prevClick} id='prev'>PREVIOUS</button>
-                <button onClick={nextClick} id='next'>NEXT</button>
+                <button onClick={prevClick} id='prev' className='Bouton'>PREVIOUS</button>
+                <button onClick={nextClick} id='next' className='Bouton'>NEXT</button>
             </div>
         </div>
 
