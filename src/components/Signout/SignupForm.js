@@ -52,8 +52,8 @@ class Signup extends Component {
                 
                 <img src="https://cdn-icons-png.flaticon.com/512/7142/7142859.png" style={{ width:"1.8%" , marginTop: "11.3%", marginLeft: "4%",position:"absolute" }}></img>
                 <img src="https://cdn-icons-png.flaticon.com/512/546/546394.png" style={{ width:"1.5%" , marginTop: "8.2%", marginLeft: "4.3%",position:"absolute" }}></img>
-                <img src="https://cdn-icons.flaticon.com/png/512/2102/premium/2102647.png?token=exp=1651959717~hmac=a70279fb8916374eb3c6b51bbbd08606" style={{ width:"1.5%" , marginTop: "4.7%", marginLeft: "4.3%",position:"absolute" }}></img>
-                <img src="https://cdn-icons.flaticon.com/png/512/508/premium/508306.png?token=exp=1651959908~hmac=21045884d70acf33bdeddd56557b2888" style={{ width:"1.7%" , marginTop: "15%", marginLeft: "4.3%",position:"absolute" }}></img>
+                <img src="https://img.icons8.com/ios/50/000000/name--v1.png" style={{ width:"1.5%" , marginTop: "4.7%", marginLeft: "4.3%",position:"absolute" }}></img>
+                <img src="https://cdn-icons-png.flaticon.com/512/7142/7142859.png" style={{ width:"1.5%" , marginTop: "16%", marginLeft: "4.3%",position:"absolute" }}></img>
                 <div className="form-group" >
 
                     <input type="text"

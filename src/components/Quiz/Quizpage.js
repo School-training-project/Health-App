@@ -3,6 +3,7 @@ import './quiz.css';
 import { useState, useEffect } from 'react';
 import { Questions, frequency, waterFrequency, exerciseFrequency, percentage } from './Questions.js';
 import { Slider } from '@mui/material';
+import { bgcolor } from '@mui/system';
 
 let counter = -1
 let score = Array(40)
@@ -19,6 +20,8 @@ const Q = () => {
     const defaultValue = 5
     const [value, setValue] = useState(defaultValue);
     const [food, setFood] = useState("")
+    const [bgcolor,setBg]=useState("linear-gradient(90deg, rgba(73,99,102,1) 0%, #ccc 0%)")
+    const [perc,setPerc]=useState(0)
     useEffect(() => {
         setTimeout(startQuiz, 2000);
         setTimeout(counter++,2000)
@@ -29,6 +32,8 @@ const Q = () => {
 
     var sum = 0
     var baseurl = ""
+    
+    var coef=0.5
     function changeQuestion(id) {
         if (id< 40) { setFood(Questions[id][0]) }
         else { endQuiz() }
@@ -44,6 +49,9 @@ const Q = () => {
         else if ((id === 37)||(id === 38)||(id === 39)) { setChoices(exerciseFrequency) }
         else if ((id === 20)||(id === 22)||(id === 24) || (id === 36)) { setChoices(percentage) }
         else (setChoices(frequency))
+        setBg(` linear-gradient(90deg, rgba(73,99,102,1) ${perc}%, #ccc ${perc}%)`)
+        const  newperc=((83.5-16.5)/40)*(counter+0.1)+16.5
+        setPerc(newperc)
     }
 
     const p= document.getElementById("prev")
@@ -52,6 +60,7 @@ const Q = () => {
         counter = counter>0? (counter-1):0
         console.log(counter)
         changeQuestion(counter)
+        
         // styling
         if ((n!=null)&&(p!=null)){
             p.style.color= counter===0? "#ccc":"#000"
@@ -62,6 +71,7 @@ const Q = () => {
         if (counter <40) {
             score[counter]=Questions[counter][value+1]
             history[counter]=value
+            
         }
         
         counter = counter<40 ? (counter+1): 40
@@ -158,10 +168,10 @@ const Q = () => {
     if (loading) {
         return <p>Data is loading...</p>;
     }
-
+    
     return (
         <div className='container'>
-            <div className="BarOuter">
+            <div className="BarOuter" style={{background:`${bgcolor}`}}>
                 <div className="BarInner">
                     <div className="questions">
                         <div className="Content">{Content}</div>
@@ -173,6 +183,17 @@ const Q = () => {
                     </div>
                 </div>
             </div>
+            <div style={{position:"relative",
+                        bottom:"20px",
+                        fontWeight:"700",
+                        fontSize:"24px",
+                        width:"80px",
+                        height:"80px",
+                        borderRadius:"50%",
+                        background:"var(--greenbar)",
+                        textAlign:"center",
+                        paddingTop:"25px"
+                        }}>{`${Math.round((perc*100/83.5))}%`}</div>
             <div className='Slider'>
                 <Slider
                     size="small"

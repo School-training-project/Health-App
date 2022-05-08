@@ -21,7 +21,6 @@ body {
     width:150%;
     height:600px;
     border-radius: 100%;
-    background: var(--dark-div);
     align-items: center;
     bottom: 400px;
     margin-bottom: -320px;
