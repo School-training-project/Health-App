@@ -24,6 +24,7 @@ const Q = () => {
     const [food, setFood] = useState("")
     const [bgcolor,setBg]=useState("linear-gradient(90deg, rgba(73,99,102,1) 0%, #ccc 0%)")
     var  newperc
+    var r = document.querySelector(":root")
     useEffect(() => {
         setTimeout(startQuiz, 2000);
         setTimeout(counter++,2000)
