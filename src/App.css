@@ -33,12 +33,15 @@ body.light{
     --linear-background:var(--linear-darkbackground);
     --map-theme:var(--light-map);
     --Boxbg:var(--yellowish);
-    --info:var(--greenbar)
+    --info:var(--greenbar);
+    --sliderBG:var(--yellowish);
+    --option:var(--black);
 }
 div>a[class$='active'] {
     position: relative;
     transform:scale(1.4);
-    box-shadow: 0px 26px 0px -1px var(--background-color);
+    box-shadow: 0px 19px 0px -7.5px var(--option);
+    transition:transform .4s cubic-bezier(0.05, 0.78, 0.11, 1.02), box-shadow .3s cubic-bezier(0.18, 1.9, 0, 0.89) .2S;
 }
 body.dark{
     --blackquiz:var(--whitequiz);
@@ -51,7 +54,9 @@ body.dark{
     --back-question: var(--dark-question);
     --linear-background:var(--linear-lightbackground);
     --Boxbg:var(--greenbar);
-    --info:var(--yellowish)
+    --info:var(--yellowish);
+    --sliderBG:var(--black);
+    --option:var(--yellowish);
 }
 
 @keyframes myAnim {

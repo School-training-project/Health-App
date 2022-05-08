@@ -68,6 +68,7 @@ const Q = () => {
             p.style.color= counter===0? "#ccc":"#000"
             n.style.color= counter<40? "#000":"#ccc"}
             setValue(history[counter])
+            r.style.setProperty('--shakeIntesity', `${(9*4000)/(5*(value+0.2))}ms`)
     }
     const nextClick= ()=>{
         if (counter <40) {
@@ -84,6 +85,7 @@ const Q = () => {
             p.style.color= counter>0? "#000":"#ccc"
         }
         setValue(history[counter])
+        r.style.setProperty('--shakeIntesity', `${(9*4000)/(5*(value+0.2))}ms`);
         
     }
     function startQuiz() {

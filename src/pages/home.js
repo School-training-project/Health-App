@@ -8,10 +8,10 @@ const Home = () => {
     const moty = ["January","February","March","April","May","June","July","August","September","October","November","December"]
     const D= new Date()
     let str=D.getDate().toString()
-    const [sleep,setSleep]=useState()
-    const [caloriesBurntdb,setcaloriesBurnt]=useState()
-    const [stepsWalkeddb,setSteps]=useState()
-    const [caloriesIncome,setCaloriesIncome]=useState()
+    const [sleep,setSleep]=useState(0)
+    const [caloriesBurntdb,setcaloriesBurnt]=useState(0)
+    const [stepsWalkeddb,setSteps]=useState(0)
+    const [caloriesIncome,setCaloriesIncome]=useState(0)
     const email= localStorage.getItem('email')
     useEffect(()=>{
         const url ="http://localhost:3001/userdata/"+email
