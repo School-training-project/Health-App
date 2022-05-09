@@ -99,7 +99,6 @@ p{
     box-shadow: 10px 15px 30px rgba(0, 0, 0, 0.1);
     width: 33%;
     height: 80%;
-    
     background: linear-gradient(to right, #42CD8C, #34998f);
     
 }
@@ -107,8 +106,7 @@ p{
     box-shadow: 10px 15px 30px rgba(0, 0, 0, 0.1);
     width: 30%;
     height: 70%;
-    background-color:white;
-    
+    background-color:var(--yellowish);
     
    
 }
@@ -116,8 +114,7 @@ p{
     box-shadow: 10px 15px 30px rgba(0, 0, 0, 0.1);
     width: 10%;
     height: 70%;
-    background-color:white;
-   
+    background-color:var(--yellowish);
 }
 .centre{
     display: flex;
