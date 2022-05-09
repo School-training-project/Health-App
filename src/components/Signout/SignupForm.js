@@ -44,10 +44,16 @@ class Signup extends Component {
     }
     render() {
         const { errors } = this.state;
+       
 
         return (
             <form noValidate onSubmit={this.onSubmit}>
-
+                <h1 style={{ textAlign: 'center' ,fontWeight: 'bold' , marginTop: '10%', color:'#34acae' }}>Create Account</h1>
+                
+                <img src="https://cdn-icons-png.flaticon.com/512/7142/7142859.png" style={{ width:"1.8%" , marginTop: "10.3%", marginLeft: "4%",position:"absolute" }}></img>
+                <img src="https://cdn-icons-png.flaticon.com/512/546/546394.png" style={{ width:"1.5%" , marginTop: "7.5%", marginLeft: "4.3%",position:"absolute" }}></img>
+                <img src="https://img.icons8.com/ios/50/000000/name--v1.png" style={{ width:"1.5%" , marginTop: "4.7%", marginLeft: "4.3%",position:"absolute" }}></img>
+                <img src="https://cdn-icons-png.flaticon.com/512/7142/7142859.png" style={{ width:"1.5%" , marginTop: "13.5%", marginLeft: "4.3%",position:"absolute" }}></img>
                 <div className="form-group" >
 
                     <input type="text"
@@ -82,7 +88,8 @@ class Signup extends Component {
                         placeholder="Confirm password" />
                     <br />
 
-                    <button type="submit" className="signbutton">SIGN UP</button>
+                    <button  type="submit" className="signbutton">SIGN UP</button>
+                    
                 </div>
             </form >
         )

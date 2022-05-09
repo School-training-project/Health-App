@@ -30,6 +30,7 @@ const userDataSchema = new mongoose.Schema({
     caloriesIncome: { type: Array, "default": [] },
     hoursSlept: { type: Array, "default": [] },
     hydrationRate: { type: Array, "default": [] },
+    score: {type: Array, "default": []}
 });
 const Credential = mongoose.model("Credential", credentialsSchema);
 const Data = mongoose.model("Data", userDataSchema);
