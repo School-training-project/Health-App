@@ -38,7 +38,7 @@ class Navbar extends Component {
             <div className='nav' >
                 <Nav  >
                     <NavLogo to="/test" >
-                        HEALTH APP
+                        ZENLY
                     </NavLogo>
                     <Bars />
                     <NavMenu>
