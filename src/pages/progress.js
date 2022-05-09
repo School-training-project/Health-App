@@ -393,6 +393,7 @@ const Progress = () => {
                     </Carousel>
                 </div>
             </>
+
         </motion.div>
     );
 };
