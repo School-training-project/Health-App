@@ -41,7 +41,15 @@ const options = {
     },
     scales: {
         y: {
-            beginAtZero: true
+            beginAtZero: true,
+            grid: {
+                color: "#496366"
+            }
+        },
+        x: {
+            grid: {
+                color: "#496366"
+            }
         }
     }
 };
@@ -102,7 +110,7 @@ const Progress = () => {
     const caloriesburnData = {
         labels: caloriesBurnedData.map(i => i.day),
         datasets: [{
-            label: "Calories Burnned",
+            label: "Calories Burned",
             fill: true,
             tension: 0.3,
             data: caloriesBurnedData.map((data) => data.calories),
@@ -148,7 +156,7 @@ const Progress = () => {
             pointBackgroundColor: "rgba(66,205,140,1)",
             pointRadius: 5,
             pointBorderColor: "#5515D2",
-            hoverBorderWidth:10 ,
+            hoverBorderWidth: 10,
             lineBackgroundColor: "rgba(66,205,140,.1)",
         }]
     }
@@ -372,7 +380,7 @@ const Progress = () => {
 
                                     </label>
 
-                                    <label for="burned"><p id="calinc">Calories Burnned:</p><br />
+                                    <label for="burned"><p id="calinc">Calories Burned:</p><br />
                                         <input type="text" id="CaloriesBurnned" ref={burnned} name="burnned" /><br />
                                     </label>
                                     <label for="slept"><p id="calinc">Hours Slept:</p><br />

@@ -269,7 +269,7 @@ function showResults(){
             <div id="BarOuter" style={{background:`${bgcolor}`}}>
                 <div id="BarInner">
                     <div id="questions">
-                        <div className="Content">{Content}</div>
+                        <div id="Content">{Content}</div>
                         <div className="food">{food}</div>
                         <div className="iconer">
                             <img src={require(`./FoodIcons/Icon${counter}.png`)} id="icon"></img>

@@ -62,62 +62,62 @@
 
 
     #StepsWalked  {
-       
+        color:var(--black);
         width: 100%;
         display: flex;
         align-items: center;
         padding: 0 8px;
         font-size: 12px;
         background: #cff6d7;
-        color: rgb(183, 243, 200);
+        
         height: 24px;
         margin-left: 10%;
       }
       #HydrationRate{
-          
+        color:var(--black);
         width: 100%;
         display: flex;
         align-items: center;
         padding: 0 8px;
         font-size: 12px;
         background: #cff6d7;
-        color: #fff;
+        
         height: 24px;
         margin-left: 10%;
       }
       #HoursSlept{
-          
+        color:var(--black);
         width: 100%;
         display: flex;
         align-items: center;
         padding: 0 8px;
         font-size: 12px;
         background: #cff6d7;
-        color: #fff;
+        
         height: 24px;
         margin-left: 10%;
       }
       #CaloriesBurnned{
-          
+        color:var(--black);
         width: 100%;
         display: flex;
         align-items: center;
         padding: 0 8px;
         font-size: 12px;
         background: #cff6d7;
-        color: #fff;
+        
         height: 24px;
         margin-left: 10%;
       }
       #CaloriesIncome{
-          
+        color:var(--black);
         width: 100%;
         display: flex;
         align-items: center;
         padding: 0 8px;
         font-size: 12px;
         background: #cff6d7;
-        color: #fff;
+        
         height: 24px;
         margin-left : 10%;
       }
