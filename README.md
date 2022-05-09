@@ -4,8 +4,12 @@ This project was developped using MERN Stack
 
 ## How To Run The Application
 
-Make sure to have installed node and mongod in your local machine <br/>
+Make sure to have installed node,npm and mongod in your local machine <br/>
 After cloning the project open a terminal and run <br/>
+```
+npm install
+```
+After instaling the dependencies run 
 ```
 mongod
 ```
