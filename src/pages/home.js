@@ -97,14 +97,14 @@ const Home = () => {
             <div className="topElements">
                 <div className="box" id="TLh">
                     <h2>Hours Slept</h2>
-                    <div className="info" id="hoursSlept">{plus(sleptHours)+`${sleptHours}`} hours</div>
+                    <div className="info" id="hoursSlept">{plus(sleptHours)+`${sleptHours>idealhrs? idealhrs:sleptHours}`} hours</div>
                     <div className="barM">
                         <div className="cursor" style={{transition:'transform 2s ease-in-out',transform:`translateX(${hrs})`}}></div>
                     </div>
                 </div>
                 <div className="box" id="TRh">
                     <h2>Calories Burnt</h2>
-                    <div className="info"  id="caloriesBurnt">{plus(caloriesBurnt)+`${caloriesBurnt}`} kcal</div>
+                    <div className="info"  id="caloriesBurnt">{plus(caloriesBurnt)+`${caloriesBurnt>idealcalb? idealcalb:caloriesBurnt}`} kcal</div>
                     <div className="barL">
                     <div className="cursor" style={{transition:'transform 2s ease-in-out',transform:`translateX(${calb})`}}></div>
                     </div>
@@ -116,14 +116,14 @@ const Home = () => {
             <div className="botElements">
                 <div className="box" id="BLh">
                     <h2>Calories Income</h2>
-                    <div className="info"  id="caloriesConsumed">{plus(caloriesConsumed)+`${caloriesConsumed}`} kcal</div>
+                    <div className="info"  id="caloriesConsumed">{plus(caloriesConsumed)+`${caloriesConsumed>idealcalc? idealcalc:caloriesConsumed}`} kcal</div>
                     <div className="barL">
                     <div className="cursor" style={{transition:'transform 2s ease-in-out',transform:`translateX(${calc})`}}></div>
                     </div>
                 </div>
                 <div className="box" id="BRh">
                     <h2>Steps Walked</h2>
-                    <div className="info"  id="stepsWalked">{plus(stepsWalked)+`${stepsWalked}`} steps</div>
+                    <div className="info"  id="stepsWalked">{plus(stepsWalked)+`${stepsWalked>idealstps? idealstps: stepsWalked}`} steps</div>
                     <div className="barL">
                     <div className="cursor" style={{transition:'transform 2s ease-in-out',transform:`translateX(${stps})`}}></div>
                     </div>

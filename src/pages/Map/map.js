@@ -4,6 +4,7 @@ import React, { useState, useRef,useEffect, useCallback } from "react";
 import Map ,{GeolocateControl}from "react-map-gl";
 import Geocoder from "react-map-gl-geocoder";
 import { motion } from 'framer-motion/dist/framer-motion'
+import { width } from "@mui/system";
 
 const MAPBOX_TOKEN =
   "pk.eyJ1Ijoic3VwZXJoMjU3IiwiYSI6ImNsMWM4ajdkOTA1OGQzam5yampkM3c4aDEifQ.TO-_alEhY5rydxgDGaF_Kw";
@@ -91,14 +92,7 @@ function Map1() {
             <a href="#" style={{color: 'var(--text-color)',transition: 'background .3s ease-in-out, color .6s ease-in-out',textDecoration: 'inherit',cursor: 'inherit'}}>Pinned Locations</a>
           </li>
         </ul>
-        <iframe
-          src="https://giphy.com/embed/3gJTIZdFKjngOEhSSG"
-          width="300"
-          height="300"
-          frameBorder="0"
-          class="giphy-embed"
-          style={{ objectFit: "cover", transform: "translate(0px,-45px)" }}
-        ></iframe>
+        <img src={require("./map.png") } width="300" height="300" style={{marginRight:"120px"}}></img>
         <ul>
           <li
             style={{
