@@ -13,6 +13,7 @@ import { logoutUser } from '../../actions/authActions';
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import { display, margin, positions } from '@mui/system';
+import {logo} from './logoblanc.png'
 
 
 
@@ -38,6 +39,7 @@ class Navbar extends Component {
             <div className='nav' >
                 <Nav  >
                     <NavLogo to="/test" >
+                    <img src={require('./logoblanc.png')} style={ {width:"8%" }}/>
                         ZENLY
                     </NavLogo>
                     <Bars />
