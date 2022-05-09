@@ -1,7 +1,7 @@
 #omar {
   animation-duration: 3s;
   animation-name: slidein;
-  font-size: 48px;
+  font-size: 45px;
   margin-top: 10%;
 }
 
@@ -12,7 +12,7 @@
   }
 
   to {
-    margin-left: 7.2%;
+    margin-left: 0.1%;
     width: 200%;
   }
   20% {
