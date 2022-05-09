@@ -50,6 +50,7 @@ onmousemove = function(e){
         #1E3163 50%,
         white 50%
     );
+    margin-right:00px;
     background-size: 200% 100%;
     background-position: ${origin};
     -webkit-background-clip: text;
@@ -147,7 +148,7 @@ export const NavBtnLink = styled(Link)`
     cursor: pointer;
     transition: all 0.2s ease-in-out;
     text-decoration: none;
-    margin-left: 24px;
+    margin-left: 30px;
     background-image: linear-gradient(
         to ${gradDir},
         #F037A5,

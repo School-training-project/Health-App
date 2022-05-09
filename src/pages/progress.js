@@ -365,7 +365,7 @@ const Progress = () => {
                                 padding: "auto",
                                 fontSize: "20px",
                             }}>
-                                <form onSubmit={onSubmit} >
+                                <form id="formcss" onSubmit={onSubmit} >
 
                                     <label for="income"><p id="calinc">Calories Income:</p>
                                         <input type="text" id="CaloriesIncome" ref={income} name="income" /><br />
@@ -384,8 +384,8 @@ const Progress = () => {
                                     <label for="rate"><p id="calinc">Hydration Rate:</p><br />
                                         <input type="text" id="HydrationRate" ref={rate} name="rate" /><br />
                                     </label>
-                                    <button onClick={postData} >Submit</button>
-                                    <button className="btn btn-sm btn-warning ml-2" onClick={clearPostOutput}>Clear</button>
+                                    <button id="buttcss" onClick={postData} >Submit</button>
+                                    <button id="buttcss2" className="btn btn-sm btn-warning ml-2" onClick={clearPostOutput}>Clear</button>
                                     {postResult && <div className="alert alert-secondary mt-2" role="alert"><pre>{postResult}</pre></div>}
                                 </form>
                             </div>
