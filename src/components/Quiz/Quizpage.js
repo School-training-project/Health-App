@@ -94,6 +94,11 @@ const Q = () => {
         setFood(Questions[counter][0])
     }
 
+
+    function curve(x){
+        //return(x*400/150)
+        return(0.0209543*x*x-0.187058*x-8.42895)
+    }
     const endQuiz=()=> {
         var lodash = require('lodash');
         sum = Math.round(lodash.sum(score))
@@ -102,7 +107,7 @@ const Q = () => {
         setValue(sum)
         console.log(sum)
         localStorage.setItem("score",sum)
-        r.style.setProperty('--percentage', `${sum*400/150}px`)
+        r.style.setProperty('--percentage', `${curve(sum)}px`)
         Endtransitions()
         var a1,a2,a3
         a1=score.indexOf(Math.min(...score))
