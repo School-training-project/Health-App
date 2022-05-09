@@ -1,4 +1,5 @@
 import React from 'react';
+import ReactDOM from 'react-dom';
 import './quiz.css';
 import { useState, useEffect } from 'react';
 import { Questions, frequency, waterFrequency, exerciseFrequency, percentage } from './Questions.js';
@@ -23,11 +24,11 @@ const Q = () => {
     const [value, setValue] = useState(defaultValue);
     const [food, setFood] = useState("")
     const [bgcolor,setBg]=useState("linear-gradient(90deg, rgba(73,99,102,1) 0%, #ccc 0%)")
-    var  newperc
+    var  newperc,f1,f2,f3
     var r = document.querySelector(':root');
     useEffect(() => {
+        setTimeout((()=>{counter=0}),1999)
         setTimeout(startQuiz, 2000);
-        setTimeout(counter++,2000)
         for (let i =0;i<40;i++){
             history[i]=defaultValue
         } 
@@ -50,7 +51,7 @@ const Q = () => {
         //Slider choice exceptions
         if ((id === 33)) { setChoices(waterFrequency) }
         else if ((id === 37)||(id === 38)||(id === 39)) { setChoices(exerciseFrequency) }
-        else if ((id === 20)||(id === 22)||(id === 24) || (id === 36)) { setChoices(percentage) }
+        else if ((id === 20)||(id === 22)||(id === 24)) { setChoices(percentage) }
         else (setChoices(frequency))
         newperc=((83.5-16.5)/40)*(counter)+16.5
         setBg(` linear-gradient(90deg, rgba(73,99,102,1) ${newperc}%, #ccc ${newperc}%)`)
@@ -101,6 +102,18 @@ const Q = () => {
         setValue(sum)
         console.log(sum)
         localStorage.setItem("score",sum)
+        r.style.setProperty('--percentage', `${sum*400/150}px`)
+        Endtransitions()
+        var a1,a2,a3
+        a1=score.indexOf(Math.min(...score))
+        score[a1]=4
+        a2=score.indexOf(Math.min(...score))
+        score[a2]=4
+        a3=score.indexOf(Math.min(...score))
+        console.log(a1,a2,a3)
+        f1=Questions[a1][0]
+        f2=Questions[a2][0]
+        f3=Questions[a3][0]
     }
     useEffect(async () => {
         const requestOptions = {
@@ -173,13 +186,84 @@ const Q = () => {
         return <p>Data is loading...</p>;
     }
   
-    
+function Endtransitions(){
+        let q=document.getElementById("rectangleContainer")
+        if(q!=null){
+        q.style.opacity='0'
+        q.style.transition='opacity .2s ease-in'
+        }
+        q=document.getElementById("questions")
+        if(q!=null){
+            q.style.opacity='0'
+            q.style.transition='opacity .2s ease-in'
+        }
+        q=document.getElementById("prev")
+        if(q!=null){
+            q.style.animation='buttonFadeOut 1s cubic-bezier(.73,.43,.15,.82) 0.7s 1 normal forwards'
+        }
+        q=document.getElementById("next")
+        if(q!=null){
+            q.style.animation='buttonFadeOut 1s cubic-bezier(.73,.43,.15,.82) 0.7s 1 normal forwards'
+        }
+        q=document.getElementById("BarInner")
+        if(q!=null){
+            q.style.animation='rideauInner 0.9s ease-in 1s 1 normal forwards'
+        }
+        q=document.getElementById("BarOuter")
+        if(q!=null){
+            q.style.animation='rideauOuter 0.9s ease-in 1s 1 normal forwards'
+            setBg('#42DC8C')
+            q.style.animation='rideauAll 4s ease 1.9s 1 normal forwards'
+        }
+        q=document.getElementById("percContainer")
+        if(q!=null){
+            q.style.opacity='0'
+            q.style.transition='opacity .2s ease-in'
+        }
+        q=document.getElementById("Slider")
+        if(q!=null){
+            q.style.animation='expand 2s ease-in-out 3s 1 normal forwards'
+            setTimeout(showResults,4500)
+        }
 
+        
+    }
+
+function showResults(){
+        let q=document.getElementById("rectangleContainer")
+        if(q!=null){q.remove()}
+        
+        q=document.getElementById("option")
+        if(q!=null){q.remove()}
+        
+        q=document.getElementById("Slider")
+        if(q!=null){
+            const element = 
+            
+            <div className='Rcontainer'>
+                <div className="scoreBarC">
+                <div className="score"></div>
+                </div>
+                <div className="scoreContainer">{sum}</div>
+                <div className='scale'>
+                <div className='echelle' id='perfect'>PERFECT 150</div>
+                <div className='echelle' id='healthy'>HEALTHY</div>
+                <div className='echelle' id='balanced'>BALANCED 100</div>
+                <div className='echelle' id='imbalanced'>IMBALANCED</div>
+                <div className='echelle' id='off'>OFFTRACK 50</div>
+                </div>
+                <div className='scaleligns'></div>
+                <div className='title'>Your Score<br/><br/><br/><br/><br/><br/><br/>you could<br/> work on:<br/><br/>{f1}<br/><br/>{f2}<br/><br/>{f3}<br/><br/></div>
+            </div>
+            ReactDOM.render(element,q)}
+            
+}
     return (
         <div className='container'>
-            <div className="BarOuter" style={{background:`${bgcolor}`}}>
-                <div className="BarInner">
-                    <div className="questions">
+            
+            <div id="BarOuter" style={{background:`${bgcolor}`}}>
+                <div id="BarInner">
+                    <div id="questions">
                         <div className="Content">{Content}</div>
                         <div className="food">{food}</div>
                         <div className="iconer">
@@ -189,18 +273,10 @@ const Q = () => {
                     </div>
                 </div>
             </div>
-            <div style={{position:"relative",
-                        bottom:"20px",
-                        fontWeight:"700",
-                        fontSize:"24px",
-                        width:"80px",
-                        height:"80px",
-                        borderRadius:"50%",
-                        background:"var(--greenbar)",
-                        textAlign:"center",
-                        paddingTop:"25px"
-                        }}>{`${Math.round(counter*100/40)}%`}</div>
-            <div className='Slider'>
+            
+            <div id='percContainer'>{`${Math.round(counter*100/40)>=0 ? Math.round(counter*100/40) : 0}%`}</div>
+            <div id='Slider'>
+                <div id="rectangleContainer">
                 <Slider
                     size="small"
                     value={value}
@@ -223,14 +299,15 @@ const Q = () => {
                         },
                     }}
                 />
-                <div className="option">
+                
+                <div id="option">
                     {`${choices[value]}`}
                 </div>
-
+                </div>
             </div>
             <div className='Buttons'>
                 <button onClick={prevClick} id='prev' className='Bouton'>PREVIOUS</button>
-                <button onClick={nextClick} id='next' className='Bouton'>NEXT</button>
+               <button onClick={nextClick} id='next' className='Bouton'>NEXT</button>
             </div>
         </div>
 
